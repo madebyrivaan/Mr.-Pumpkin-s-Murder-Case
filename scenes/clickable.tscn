@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://tyl54j13bv5p"]
+
+[ext_resource type="Script" uid="uid://bwbrct7h7g270" path="res://scripts/click.gd" id="1_8ylfl"]
+[ext_resource type="Texture2D" uid="uid://del6i4vdiw8dg" path="res://sprites/dummy.png" id="2_8ylfl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ylfl"]
+size = Vector2(16, 16)
+
+[node name="Clickable" type="Area2D" unique_id=1421420459]
+script = ExtResource("1_8ylfl")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=2034708174]
+texture = ExtResource("2_8ylfl")
+
+[node name="Hover Box" type="CollisionShape2D" parent="." unique_id=1454076919]
+shape = SubResource("RectangleShape2D_8ylfl")

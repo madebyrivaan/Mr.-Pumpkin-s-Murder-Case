@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cx16nipwq7vyy"]
+
+[ext_resource type="Script" uid="uid://cb802p7bgn1kt" path="res://scenes/game.gd" id="1_errlg"]
+[ext_resource type="PackedScene" uid="uid://tyl54j13bv5p" path="res://scenes/clickable.tscn" id="2_bl13t"]
+
+[node name="Game" type="Node2D" unique_id=255489037]
+script = ExtResource("1_errlg")
+
+[node name="Clickable" parent="." unique_id=2034708174 instance=ExtResource("2_bl13t")]
+scale = Vector2(16, 16)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1020124421]

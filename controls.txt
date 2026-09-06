@@ -1,0 +1,2 @@
+mouse - highlight, click to interact
+arrow keys for panning if the room has multiple angles of view

@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bnmjri7s0lnts"]
+
+[ext_resource type="Texture2D" uid="uid://dbaup40g75yi" path="res://sprites/test_bg.png" id="1_twv5e"]
+[ext_resource type="PackedScene" uid="uid://tyl54j13bv5p" path="res://scenes/clickable.tscn" id="2_ca18f"]
+
+[node name="Room" type="CanvasGroup" unique_id=706307736]
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1360910813]
+texture = ExtResource("1_twv5e")
+
+[node name="Clickable" parent="." unique_id=375423447 instance=ExtResource("2_ca18f")]
+position = Vector2(-418, 177)
+scale = Vector2(9, 9)
+
+[node name="Clickable2" parent="." unique_id=60977983 instance=ExtResource("2_ca18f")]
+position = Vector2(-665, -140)
+scale = Vector2(4, 4)
+
+[node name="Clickable3" parent="." unique_id=575432389 instance=ExtResource("2_ca18f")]
+position = Vector2(765, -139)
+scale = Vector2(8, 8)
