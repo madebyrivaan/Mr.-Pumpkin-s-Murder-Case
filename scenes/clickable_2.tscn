@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://b3uiobednkqet"]
+
+[ext_resource type="Texture2D" uid="uid://del6i4vdiw8dg" path="res://sprites/dummy.png" id="1_4446y"]
+[ext_resource type="Script" uid="uid://bwbrct7h7g270" path="res://scripts/click.gd" id="1_u2r6l"]
+
+[node name="Clickable2" type="TextureButton" unique_id=1925894284]
+anchors_preset = -1
+anchor_left = -0.008333334
+anchor_top = -0.014814815
+anchor_right = 0.008333334
+anchor_bottom = 0.014814815
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(8, 8)
+texture_normal = ExtResource("1_4446y")
+stretch_mode = 4
+script = ExtResource("1_u2r6l")
+flavor_text = Array[String](["", "hello world", "this is flavor text", "line 0 has to be empty"])
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
