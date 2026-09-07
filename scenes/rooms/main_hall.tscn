@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cdvj474cfh4em"]
+
+[ext_resource type="PackedScene" uid="uid://b3uiobednkqet" path="res://scenes/clickable_2.tscn" id="1_dp83u"]
+[ext_resource type="PackedScene" uid="uid://bg2v2fdt755v1" path="res://scenes/dialogue_box.tscn" id="3_gqnnw"]
+
+[node name="main_hall" type="Node2D" unique_id=1433296681]
+
+[node name="Just so you know, this is a test room" type="Node2D" parent="." unique_id=1376074717]
+
+[node name="Clickable2" parent="." unique_id=1925894284 instance=ExtResource("1_dp83u")]
+offset_left = 296.0
+offset_top = 161.0
+offset_right = 485.0
+offset_bottom = 353.0
+flavor_text = Array[String](["", "hello world", "this is flavor text", "line 0 doesn't have to be empty"])
+
+[node name="Dialogue GUI Layer" parent="." unique_id=67360601 instance=ExtResource("3_gqnnw")]

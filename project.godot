@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="jamegam61"
-run/main_scene="uid://cx16nipwq7vyy"
+run/main_scene="uid://cdvj474cfh4em"
 config/features=PackedStringArray("4.7", "GL Compatibility")
+
+[autoload]
+
+RoomTransition="*uid://cd77n4rdkdrar"
+Game="*uid://cb802p7bgn1kt"
 
 [display]
 

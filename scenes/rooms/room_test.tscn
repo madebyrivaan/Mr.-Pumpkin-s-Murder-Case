@@ -1,39 +1,30 @@
 [gd_scene format=3 uid="uid://bnmjri7s0lnts"]
 
 [ext_resource type="Texture2D" uid="uid://dbaup40g75yi" path="res://sprites/test_bg.png" id="1_g6r6c"]
-[ext_resource type="PackedScene" uid="uid://tyl54j13bv5p" path="res://scenes/clickable.tscn" id="2_j1wlm"]
-
-[sub_resource type="GDScript" id="GDScript_qkadl"]
-script/source = "extends CanvasGroup
-class_name Room
-
-
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-"
+[ext_resource type="PackedScene" uid="uid://b3uiobednkqet" path="res://scenes/clickable_2.tscn" id="2_j1wlm"]
 
 [node name="Room" type="CanvasGroup" unique_id=706307736]
-script = SubResource("GDScript_qkadl")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1360910813]
 texture = ExtResource("1_g6r6c")
 
 [node name="Clickable" parent="." unique_id=375423447 instance=ExtResource("2_j1wlm")]
-position = Vector2(-418, 177)
+offset_left = -418.0
+offset_top = 177.0
+offset_right = -418.0
+offset_bottom = 177.0
 scale = Vector2(9, 9)
 
 [node name="Clickable2" parent="." unique_id=60977983 instance=ExtResource("2_j1wlm")]
-position = Vector2(-665, -140)
+offset_left = -665.0
+offset_top = -140.0
+offset_right = -665.0
+offset_bottom = -140.0
 scale = Vector2(4, 4)
 
 [node name="Clickable3" parent="." unique_id=575432389 instance=ExtResource("2_j1wlm")]
-position = Vector2(765, -139)
+offset_left = 765.0
+offset_top = -139.0
+offset_right = 765.0
+offset_bottom = -139.0
 scale = Vector2(8, 8)

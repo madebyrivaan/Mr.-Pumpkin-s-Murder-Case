@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://ckrxgvoi7465q"]
+
+[ext_resource type="Texture2D" uid="uid://sgcqovtfxelp" path="res://sprites/icons/door.png" id="1_cwplf"]
+[ext_resource type="PackedScene" uid="uid://b3uiobednkqet" path="res://scenes/clickable_2.tscn" id="2_1vprx"]
+[ext_resource type="PackedScene" uid="uid://bg2v2fdt755v1" path="res://scenes/dialogue_box.tscn" id="3_whf2s"]
+
+[node name="bedroom" type="Node2D" unique_id=300373161]
+
+[node name="This one too is a test room" type="Node2D" parent="." unique_id=774511948]
+
+[node name="and this is test too" type="Sprite2D" parent="This one too is a test room" unique_id=597546528]
+position = Vector2(421, 254.99998)
+scale = Vector2(19.125, 18.1875)
+texture = ExtResource("1_cwplf")
+
+[node name="Clickable2" parent="." unique_id=1925894284 instance=ExtResource("2_1vprx")]
+offset_left = 571.0
+offset_top = 146.0
+offset_right = 760.0
+offset_bottom = 338.0
+flavor_text = Array[String](["if you read this", "everything went fine"])
+
+[node name="Dialogue GUI Layer" parent="." unique_id=67360601 instance=ExtResource("3_whf2s")]
