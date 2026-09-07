@@ -6,6 +6,10 @@
 size = Vector2(16, 16)
 
 [node name="Clickable" type="Area2D" unique_id=1421420459]
+<<<<<<< HEAD
+script = ExtResource("1_8ylfl")
+=======
+>>>>>>> ea18f65e26f7f1e23c94b136de864198036a78d2
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=2034708174]
 texture = ExtResource("2_8ylfl")

@@ -1,5 +1,11 @@
+<<<<<<< HEAD
+@icon("res://sprites/icons/door.png")
+class_name Clickable
+extends Area2D
+=======
 extends TextureButton
 
+>>>>>>> ea18f65e26f7f1e23c94b136de864198036a78d2
 # IMPORTANT! Always leave array element 0 of flavor_text empty.
 @export var flavor_text: Array[String]
 
@@ -7,6 +13,7 @@ extends TextureButton
 	
 func _ready() -> void:
 	set_process_input(false)
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
