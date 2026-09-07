@@ -1,11 +1,7 @@
-<<<<<<< HEAD
 @icon("res://sprites/icons/door.png")
 class_name Clickable
-extends Area2D
-=======
-extends TextureButton
 
->>>>>>> ea18f65e26f7f1e23c94b136de864198036a78d2
+extends TextureButton
 # IMPORTANT! Always leave array element 0 of flavor_text empty.
 @export var flavor_text: Array[String]
 
