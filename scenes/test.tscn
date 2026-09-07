@@ -1,12 +1,26 @@
 [gd_scene format=3 uid="uid://cx16nipwq7vyy"]
 
 [ext_resource type="Script" uid="uid://cb802p7bgn1kt" path="res://scenes/game.gd" id="1_errlg"]
-[ext_resource type="PackedScene" uid="uid://tyl54j13bv5p" path="res://scenes/clickable.tscn" id="2_bl13t"]
+[ext_resource type="PackedScene" uid="uid://b3uiobednkqet" path="res://scenes/clickable_2.tscn" id="2_iyx0m"]
+[ext_resource type="PackedScene" uid="uid://bg2v2fdt755v1" path="res://scenes/dialogue_box.tscn" id="3_iyx0m"]
 
 [node name="Game" type="Node2D" unique_id=255489037]
 script = ExtResource("1_errlg")
 
-[node name="Clickable" parent="." unique_id=2034708174 instance=ExtResource("2_bl13t")]
-scale = Vector2(16, 16)
+[node name="Clickable2" parent="." unique_id=1925894284 instance=ExtResource("2_iyx0m")]
+offset_left = -448.0
+offset_top = -183.0
+offset_right = -94.0
+offset_bottom = 172.0
+flavor_text = Array[String](["", "hello world", "this is flavor text", "line 0 doesn't have to be empty anymore"])
+
+[node name="Clickable3" parent="." unique_id=1203313043 instance=ExtResource("2_iyx0m")]
+offset_left = 86.0
+offset_top = -176.0
+offset_right = 440.0
+offset_bottom = 179.0
+flavor_text = Array[String](["hey", "hello world", "this is other flavor text", "just to check if everything is working"])
+
+[node name="Dialogue GUI Layer" parent="." unique_id=67360601 instance=ExtResource("3_iyx0m")]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1020124421]
