@@ -3,34 +3,74 @@
 [ext_resource type="Texture2D" uid="uid://dbaup40g75yi" path="res://sprites/test_bg.png" id="1_g6r6c"]
 [ext_resource type="PackedScene" uid="uid://b3uiobednkqet" path="res://scenes/clickable_2.tscn" id="2_j1wlm"]
 [ext_resource type="PackedScene" uid="uid://bg2v2fdt755v1" path="res://scenes/dialogue_box.tscn" id="3_j1wlm"]
+[ext_resource type="Texture2D" uid="uid://3d4lmnprhpam" path="res://sprites/evidence/Champagne.png" id="3_qkadl"]
+[ext_resource type="Texture2D" uid="uid://d4gpx4cepvscu" path="res://sprites/evidence/Glass.png" id="4_wunes"]
+[ext_resource type="Texture2D" uid="uid://be2n3jur7e04k" path="res://sprites/evidence/Cigar ash.png" id="5_igfvs"]
+[ext_resource type="Texture2D" uid="uid://bvb01fhpfwqln" path="res://sprites/evidence/Shovel.png" id="6_qpoms"]
+[ext_resource type="Texture2D" uid="uid://bt0ex2pghy1gv" path="res://sprites/evidence/Document page.png" id="7_ltdr3"]
 
 [node name="Room" type="CanvasGroup" unique_id=706307736]
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1360910813]
 texture = ExtResource("1_g6r6c")
 
-[node name="Test" parent="." unique_id=375423447 instance=ExtResource("2_j1wlm")]
-offset_left = -418.0
-offset_top = 177.0
-offset_right = -418.0
-offset_bottom = 177.0
-scale = Vector2(9, 9)
-
-[node name="Test 2" parent="." unique_id=60977983 instance=ExtResource("2_j1wlm")]
-offset_left = -665.0
-offset_top = -140.0
-offset_right = -665.0
-offset_bottom = -140.0
-scale = Vector2(4, 4)
-
-[node name="Clickable3" parent="." unique_id=575432389 instance=ExtResource("2_j1wlm")]
-offset_left = 765.0
-offset_top = -139.0
-offset_right = 765.0
-offset_bottom = -139.0
+[node name="Glass" parent="." unique_id=60977983 instance=ExtResource("2_j1wlm")]
+offset_left = -920.0
+offset_top = 280.0
+offset_right = -910.0
+offset_bottom = 312.5
 scale = Vector2(8, 8)
+texture_normal = ExtResource("4_wunes")
+ignore_texture_size = true
+stretch_mode = 3
+flavor_text = Array[String](["Why does the smell of the glass differ from the bottle ?"])
+
+[node name="Bottle" parent="." unique_id=375423447 instance=ExtResource("2_j1wlm")]
+offset_left = -939.0
+offset_top = 286.0
+offset_right = -924.125
+offset_bottom = 318.0
+scale = Vector2(8, 8)
+texture_normal = ExtResource("3_qkadl")
+ignore_texture_size = true
+stretch_mode = 3
+flavor_text = Array[String](["A vintage bottle... half empty."])
+
+[node name="Cigar ash" parent="." unique_id=575432389 instance=ExtResource("2_j1wlm")]
+offset_left = -600.0
+offset_top = 200.0
+offset_right = -568.0
+offset_bottom = 210.0
+rotation = 3.1415927
+scale = Vector2(8, 8)
+texture_normal = ExtResource("5_igfvs")
+ignore_texture_size = true
+stretch_mode = 2
+flip_v = true
+flavor_text = Array[String](["A scorched mark left by cigar ash...", "Someone was smoking here, and it wasn't Mr. Pumpkin."])
+
+[node name="Shovel" parent="." unique_id=1925894284 instance=ExtResource("2_j1wlm")]
+offset_left = -271.0
+offset_top = 188.0
+offset_right = -255.0
+offset_bottom = 204.0
+scale = Vector2(8, 8)
+texture_normal = ExtResource("6_qpoms")
+flavor_text = Array[String](["The murder weapon has fingerprints, belonging to... ?"])
+
+[node name="Document page" parent="." unique_id=603942352 instance=ExtResource("2_j1wlm")]
+offset_left = -238.0
+offset_top = -264.0
+offset_right = -216.25
+offset_bottom = -256.0
+scale = Vector2(8, 8)
+texture_normal = ExtResource("7_ltdr3")
+ignore_texture_size = true
+stretch_mode = 3
+flavor_text = Array[String](["An important page left on the floor..."])
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=936672639]
 position = Vector2(-342, 68)
+zoom = Vector2(0.5, 0.5)
 
 [node name="Dialogue GUI Layer" parent="." unique_id=67360601 instance=ExtResource("3_j1wlm")]

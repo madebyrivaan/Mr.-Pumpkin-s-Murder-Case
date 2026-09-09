@@ -2,8 +2,24 @@
 
 [ext_resource type="Script" uid="uid://b1yyfixpdgtyb" path="res://scripts/notebook.gd" id="1_6ub6w"]
 [ext_resource type="FontFile" uid="uid://ps5xn0ajg1ap" path="res://fonts/Mister Pixel Regular.otf" id="1_djd1h"]
-[ext_resource type="Texture2D" uid="uid://guuu8nrr3o03" path="res://sprites/gui/bg_placeholder1.png" id="2_xkp3b"]
+[ext_resource type="Texture2D" uid="uid://c2tuntaoqwv6b" path="res://sprites/Notebook.png" id="3_djd1h"]
 [ext_resource type="PackedScene" uid="uid://cjtmeonqkvdak" path="res://scenes/evidence_button.tscn" id="4_djd1h"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_djd1h"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rmmsx"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yqcxt"]
+content_margin_left = 3.0
+content_margin_top = 3.0
+content_margin_right = 3.0
+content_margin_bottom = 3.0
+bg_color = Color(0.09803922, 0.09803922, 0.09803922, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_color = Color(1, 0.9529412, 0.8627451, 1)
 
 [node name="NotebookLayer" type="CanvasLayer" unique_id=563192354]
 process_mode = 3
@@ -16,14 +32,21 @@ anchor_right = 0.85833335
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_selected_color = Color(1, 0.9529412, 0.8627451, 1)
+theme_override_colors/font_hovered_color = Color(1, 1, 1, 1)
+theme_override_colors/font_unselected_color = Color(0.75, 0.71325, 0.645, 1)
 theme_override_fonts/font = ExtResource("1_djd1h")
 theme_override_font_sizes/font_size = 32
+theme_override_styles/panel = SubResource("StyleBoxEmpty_djd1h")
+theme_override_styles/tab_unselected = SubResource("StyleBoxFlat_rmmsx")
+theme_override_styles/tab_selected = SubResource("StyleBoxFlat_yqcxt")
 tab_alignment = 1
 current_tab = 0
 
 [node name="Evidence" type="TextureRect" parent="Notebook" unique_id=368804411]
 layout_mode = 2
-texture = ExtResource("2_xkp3b")
+texture = ExtResource("3_djd1h")
+expand_mode = 1
 metadata/_tab_index = 0
 
 [node name="EvidenceGrid" type="GridContainer" parent="Notebook/Evidence" unique_id=1025719372]
@@ -31,13 +54,14 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -329.0
-offset_top = 39.0
-offset_right = 327.0
-offset_bottom = 135.0
+offset_left = -296.0
+offset_top = 87.0
+offset_right = -87.0
+offset_bottom = 407.0
 grow_horizontal = 2
 theme_override_constants/h_separation = 16
-columns = 6
+theme_override_constants/v_separation = 16
+columns = 2
 
 [node name="EvidenceButton" parent="Notebook/Evidence/EvidenceGrid" unique_id=408976175 instance=ExtResource("4_djd1h")]
 layout_mode = 2
@@ -56,6 +80,34 @@ layout_mode = 2
 
 [node name="EvidenceButton6" parent="Notebook/Evidence/EvidenceGrid" unique_id=1309655863 instance=ExtResource("4_djd1h")]
 layout_mode = 2
+
+[node name="ItemName" type="Label" parent="Notebook/Evidence" unique_id=495637658]
+layout_mode = 0
+offset_left = 424.0
+offset_top = 31.0
+offset_right = 637.0
+offset_bottom = 128.0
+theme_override_colors/font_color = Color(0.09803922, 0.09803922, 0.09803922, 1)
+theme_override_colors/font_outline_color = Color(0.09803922, 0.09803922, 0.09803922, 1)
+theme_override_fonts/font = ExtResource("1_djd1h")
+theme_override_font_sizes/font_size = 46
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="ItemDesc" type="Label" parent="Notebook/Evidence" unique_id=2044071300]
+custom_minimum_size = Vector2(216, 344)
+custom_maximum_size = Vector2(216, 344)
+layout_mode = 0
+offset_left = 424.0
+offset_top = 127.0
+offset_right = 640.0
+offset_bottom = 471.0
+theme_override_colors/font_color = Color(0.09803922, 0.09803922, 0.09803922, 1)
+theme_override_colors/font_outline_color = Color(0.09803922, 0.09803922, 0.09803922, 1)
+theme_override_fonts/font = ExtResource("1_djd1h")
+theme_override_font_sizes/font_size = 32
+autowrap_mode = 2
 
 [node name="Profiles" type="GridContainer" parent="Notebook" unique_id=2054127251]
 visible = false

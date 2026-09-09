@@ -11,3 +11,5 @@ offset_bottom = 40.0
 texture_normal = ExtResource("1_vx163")
 stretch_mode = 0
 script = ExtResource("2_fi4dr")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
