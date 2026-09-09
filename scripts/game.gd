@@ -5,7 +5,7 @@ static var Instance: DialogueHandler = null
 signal next_line_prompted
 var reading_dialogue: bool
 var current_text : String
-
+signal done
 var counter : int = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -35,5 +35,6 @@ func load_dialogue(dialogue: Array[String]) -> void:
 		counter += 1
 		await next_line_prompted
 	reading_dialogue = false
+	done.emit()
 	
 		

@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cjtmeonqkvdak" path="res://scenes/evidence_button.tscn" id="4_djd1h"]
 
 [node name="NotebookLayer" type="CanvasLayer" unique_id=563192354]
+process_mode = 3
 script = ExtResource("1_6ub6w")
 
 [node name="Notebook" type="TabContainer" parent="." unique_id=1704977329]
