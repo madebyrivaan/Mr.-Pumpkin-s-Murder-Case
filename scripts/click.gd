@@ -31,13 +31,13 @@ func _process(delta: float) -> void:
 
 
 func _on_pressed() -> void:
-	if DialogueHandler.Instance.reading_dialogue: return
-	elif DialogueHandler.Instance.counter == len(flavor_text):
-		DialogueHandler.Instance.counter = 0
-		DialogueHandler.Instance.current_text = flavor_text[0]
+	if DialogueHandler.reading_dialogue: return
+	elif DialogueHandler.counter == len(flavor_text):
+		DialogueHandler.counter = 0
+		DialogueHandler.current_text = flavor_text[0]
 		return
-	DialogueHandler.Instance.load_dialogue(flavor_text)
-	DialogueHandler.Instance.current_text = flavor_text[0]
+	DialogueHandler.load_dialogue(flavor_text)
+	DialogueHandler.current_text = flavor_text[0]
 	Notebook.add_evidence(name)
-	await DialogueHandler.Instance.done
+	await DialogueHandler.done
 	queue_free()
