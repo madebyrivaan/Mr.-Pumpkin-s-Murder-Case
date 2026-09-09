@@ -9,11 +9,11 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if not DialogueHandler.Instance.reading_dialogue:
+	if not DialogueHandler.reading_dialogue:
 		hide()
 		return
 	show()
-	$"Displayed Text".text = DialogueHandler.Instance.current_text
+	$"Displayed Text".text = DialogueHandler.current_text
 	#Tweening for smoother dialogue - Work In Progress
 	#if $"Displayed Text".text != previous_text:
 		#previous_text = $"Displayed Text".text

@@ -1,21 +1,11 @@
 extends Node2D
-class_name DialogueHandler
 
-static var Instance: DialogueHandler = null
 signal next_line_prompted
 var reading_dialogue: bool
 var current_text : String
 signal done
 var counter : int = 0
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	if Instance == null:
-		Instance = self
-	else:
-		queue_free()
-		return
-	reading_dialogue = false
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

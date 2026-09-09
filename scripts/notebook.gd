@@ -1,5 +1,4 @@
 extends CanvasLayer
-
 @onready var evidence = $Notebook/Evidence/EvidenceGrid
 var found_evidence_list : Array = []
 var evidence_counter : int = 0
