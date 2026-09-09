@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cjtmeonqkvdak"]
+
+[ext_resource type="Texture2D" uid="uid://cddkxliw80kgv" path="res://sprites/gui/bg_placeholder3.png" id="1_vx163"]
+[ext_resource type="Script" uid="uid://cc2xqxeigeefx" path="res://scripts/evidence_button.gd" id="2_fi4dr"]
+
+[node name="EvidenceButton" type="TextureButton" unique_id=408976175]
+custom_minimum_size = Vector2(96, 96)
+custom_maximum_size = Vector2(96, 96)
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("1_vx163")
+stretch_mode = 0
+script = ExtResource("2_fi4dr")

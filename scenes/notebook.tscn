@@ -1,21 +1,62 @@
 [gd_scene format=3 uid="uid://c2nnhqwp0d0j1"]
 
 [ext_resource type="Script" uid="uid://b1yyfixpdgtyb" path="res://scripts/notebook.gd" id="1_6ub6w"]
+[ext_resource type="FontFile" uid="uid://ps5xn0ajg1ap" path="res://fonts/Mister Pixel Regular.otf" id="1_djd1h"]
+[ext_resource type="Texture2D" uid="uid://guuu8nrr3o03" path="res://sprites/gui/bg_placeholder1.png" id="2_xkp3b"]
+[ext_resource type="PackedScene" uid="uid://cjtmeonqkvdak" path="res://scenes/evidence_button.tscn" id="4_djd1h"]
 
-[node name="Notebook" type="TabContainer" unique_id=378965502]
-offset_right = 121.0
-offset_bottom = 31.0
-tab_alignment = 1
-current_tab = 0
+[node name="NotebookLayer" type="CanvasLayer" unique_id=563192354]
 script = ExtResource("1_6ub6w")
 
-[node name="Evidence" type="GridContainer" parent="." unique_id=511871620]
-layout_mode = 2
-columns = 5
-metadata/_tab_index = 0
-metadata/_tab_name = "Evidence"
+[node name="Notebook" type="TabContainer" parent="." unique_id=1704977329]
+anchors_preset = -1
+anchor_left = 0.14166667
+anchor_right = 0.85833335
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_djd1h")
+theme_override_font_sizes/font_size = 32
+tab_alignment = 1
+current_tab = 0
 
-[node name="Profiles" type="GridContainer" parent="." unique_id=940782678]
+[node name="Evidence" type="TextureRect" parent="Notebook" unique_id=368804411]
+layout_mode = 2
+texture = ExtResource("2_xkp3b")
+metadata/_tab_index = 0
+
+[node name="EvidenceGrid" type="GridContainer" parent="Notebook/Evidence" unique_id=1025719372]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -329.0
+offset_top = 39.0
+offset_right = 327.0
+offset_bottom = 135.0
+grow_horizontal = 2
+theme_override_constants/h_separation = 16
+columns = 6
+
+[node name="EvidenceButton" parent="Notebook/Evidence/EvidenceGrid" unique_id=408976175 instance=ExtResource("4_djd1h")]
+layout_mode = 2
+
+[node name="EvidenceButton2" parent="Notebook/Evidence/EvidenceGrid" unique_id=625533367 instance=ExtResource("4_djd1h")]
+layout_mode = 2
+
+[node name="EvidenceButton3" parent="Notebook/Evidence/EvidenceGrid" unique_id=1047376364 instance=ExtResource("4_djd1h")]
+layout_mode = 2
+
+[node name="EvidenceButton4" parent="Notebook/Evidence/EvidenceGrid" unique_id=996976169 instance=ExtResource("4_djd1h")]
+layout_mode = 2
+
+[node name="EvidenceButton5" parent="Notebook/Evidence/EvidenceGrid" unique_id=716039412 instance=ExtResource("4_djd1h")]
+layout_mode = 2
+
+[node name="EvidenceButton6" parent="Notebook/Evidence/EvidenceGrid" unique_id=1309655863 instance=ExtResource("4_djd1h")]
+layout_mode = 2
+
+[node name="Profiles" type="GridContainer" parent="Notebook" unique_id=2054127251]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 1

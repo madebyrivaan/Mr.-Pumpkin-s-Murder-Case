@@ -1,4 +1,3 @@
-class_name RoomTransition
 extends Node
 static var Instance: RoomTransition
 var current_room: String
@@ -14,7 +13,6 @@ func _ready() -> void:
 	else:
 		queue_free()
 		return
-	reading_dialogue = false
 	current_room = get_tree().get_root().get_child(-1).name
 	linked_rooms = get_linked_rooms(current_room)
 
@@ -37,7 +35,8 @@ func get_linked_rooms(room_id: String) -> Array:
 	##Thx, I did it with a .json file
 	##For testing purposes, you can switch rooms by pressing space (start in the "main_hall" scene)
 	for room in room_links:
-		
+		if room == room_id:
+			return room_links[room]
 	return []
 	
 	

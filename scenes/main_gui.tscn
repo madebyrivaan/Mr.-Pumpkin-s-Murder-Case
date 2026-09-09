@@ -2,6 +2,8 @@
 
 [ext_resource type="FontFile" uid="uid://ps5xn0ajg1ap" path="res://fonts/Mister Pixel Regular.otf" id="1_cv0rn"]
 [ext_resource type="Texture2D" uid="uid://0lm070bcg8hx" path="res://sprites/gui/button_evidence.png" id="2_wffg3"]
+[ext_resource type="Texture2D" uid="uid://2ilw7bfvwpy0" path="res://sprites/gui/button_evidence_pressed.png" id="6_0envr"]
+[ext_resource type="Texture2D" uid="uid://c6uxodhqa431a" path="res://sprites/gui/button_evidence_hover.png" id="7_s4oo3"]
 [ext_resource type="Texture2D" uid="uid://c26ci1gul8mjk" path="res://sprites/gui/button_check.png" id="8_hhjly"]
 [ext_resource type="Texture2D" uid="uid://bv4lso1jka0mi" path="res://sprites/gui/button_check_pressed.png" id="9_0iisb"]
 [ext_resource type="Texture2D" uid="uid://bj5f73gsbajwx" path="res://sprites/gui/button_check_hover.png" id="10_56bgk"]
@@ -26,3 +28,5 @@ texture_hover = ExtResource("10_56bgk")
 [node name="Notebook" type="TextureButton" parent="HBoxContainer" unique_id=1758341095]
 layout_mode = 2
 texture_normal = ExtResource("2_wffg3")
+texture_pressed = ExtResource("6_0envr")
+texture_hover = ExtResource("7_s4oo3")

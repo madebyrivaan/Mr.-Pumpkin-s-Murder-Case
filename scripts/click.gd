@@ -38,3 +38,4 @@ func _on_pressed() -> void:
 		return
 	DialogueHandler.Instance.load_dialogue(flavor_text)
 	DialogueHandler.Instance.current_text = flavor_text[0]
+	Notebook.add_evidence(name)
