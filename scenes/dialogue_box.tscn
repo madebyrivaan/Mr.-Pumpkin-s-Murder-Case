@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bg2v2fdt755v1"]
 
 [ext_resource type="Script" uid="uid://bbuum3kberc86" path="res://scripts/dialogue_box.gd" id="1_fu8b5"]
-[ext_resource type="Texture2D" uid="uid://vo2b0litnuvj" path="res://sprites/dialogue_box.png" id="1_rc1id"]
+[ext_resource type="Texture2D" uid="uid://vo2b0litnuvj" path="res://sprites/gui/dialogue_box.png" id="1_rc1id"]
 
 [node name="Dialogue GUI Layer" type="CanvasLayer" unique_id=67360601]
 script = ExtResource("1_fu8b5")

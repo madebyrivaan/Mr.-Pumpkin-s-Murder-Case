@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://c2nnhqwp0d0j1"]
+
+[ext_resource type="Script" uid="uid://b1yyfixpdgtyb" path="res://scripts/notebook.gd" id="1_6ub6w"]
+
+[node name="Notebook" type="TabContainer" unique_id=378965502]
+offset_right = 121.0
+offset_bottom = 31.0
+tab_alignment = 1
+current_tab = 0
+script = ExtResource("1_6ub6w")
+
+[node name="Evidence" type="GridContainer" parent="." unique_id=511871620]
+layout_mode = 2
+columns = 5
+metadata/_tab_index = 0
+metadata/_tab_name = "Evidence"
+
+[node name="Profiles" type="GridContainer" parent="." unique_id=940782678]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1

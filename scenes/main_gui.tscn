@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://dhdr1wh28sh3a"]
+
+[ext_resource type="FontFile" uid="uid://ps5xn0ajg1ap" path="res://fonts/Mister Pixel Regular.otf" id="1_cv0rn"]
+[ext_resource type="Texture2D" uid="uid://0lm070bcg8hx" path="res://sprites/gui/button_evidence.png" id="2_wffg3"]
+[ext_resource type="Texture2D" uid="uid://c26ci1gul8mjk" path="res://sprites/gui/button_check.png" id="8_hhjly"]
+[ext_resource type="Texture2D" uid="uid://bv4lso1jka0mi" path="res://sprites/gui/button_check_pressed.png" id="9_0iisb"]
+[ext_resource type="Texture2D" uid="uid://bj5f73gsbajwx" path="res://sprites/gui/button_check_hover.png" id="10_56bgk"]
+
+[sub_resource type="Theme" id="Theme_13lpe"]
+default_font = ExtResource("1_cv0rn")
+
+[node name="Control" type="AspectRatioContainer" unique_id=561469568]
+offset_right = 332.0
+offset_bottom = 32.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=738729327]
+layout_mode = 2
+theme = SubResource("Theme_13lpe")
+
+[node name="Interact" type="TextureButton" parent="HBoxContainer" unique_id=1513384350]
+layout_mode = 2
+texture_normal = ExtResource("8_hhjly")
+texture_pressed = ExtResource("9_0iisb")
+texture_hover = ExtResource("10_56bgk")
+
+[node name="Notebook" type="TextureButton" parent="HBoxContainer" unique_id=1758341095]
+layout_mode = 2
+texture_normal = ExtResource("2_wffg3")

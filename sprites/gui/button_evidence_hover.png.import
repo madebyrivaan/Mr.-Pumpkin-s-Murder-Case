@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vo2b0litnuvj"
-path="res://.godot/imported/dialogue_box.png-abfc8495eae2deaa9e564ccc1f77ca3f.ctex"
+uid="uid://c6uxodhqa431a"
+path="res://.godot/imported/button_evidence_hover.png-742457be56293f9d99662ff5859d1831.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/dialogue_box.png"
-dest_files=["res://.godot/imported/dialogue_box.png-abfc8495eae2deaa9e564ccc1f77ca3f.ctex"]
+source_file="res://sprites/gui/button_evidence_hover.png"
+dest_files=["res://.godot/imported/button_evidence_hover.png-742457be56293f9d99662ff5859d1831.ctex"]
 
 [params]
 

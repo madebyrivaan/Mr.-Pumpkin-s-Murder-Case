@@ -1,13 +1,20 @@
+class_name RoomTransition
 extends Node
+static var Instance: RoomTransition
 var current_room: String
 const room_scenes_dir = "res://scenes/rooms/"
 # Representation
 var linked_rooms: Array
-
 var room_links_file = FileAccess.open("res://scenes/rooms/room_links.json", FileAccess.READ)
 var room_links = JSON.parse_string(room_links_file.get_as_text())
 
 func _ready() -> void:
+	if Instance == null:
+		Instance = self
+	else:
+		queue_free()
+		return
+	reading_dialogue = false
 	current_room = get_tree().get_root().get_child(-1).name
 	linked_rooms = get_linked_rooms(current_room)
 
@@ -30,8 +37,7 @@ func get_linked_rooms(room_id: String) -> Array:
 	##Thx, I did it with a .json file
 	##For testing purposes, you can switch rooms by pressing space (start in the "main_hall" scene)
 	for room in room_links:
-		if room == room_id:
-			return room_links[room]
+		
 	return []
 	
 	
