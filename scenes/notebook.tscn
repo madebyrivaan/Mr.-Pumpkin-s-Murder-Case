@@ -4,17 +4,22 @@
 [ext_resource type="FontFile" uid="uid://ps5xn0ajg1ap" path="res://fonts/Mister Pixel Regular.otf" id="1_djd1h"]
 [ext_resource type="Texture2D" uid="uid://c2tuntaoqwv6b" path="res://sprites/Notebook.png" id="3_djd1h"]
 [ext_resource type="PackedScene" uid="uid://cjtmeonqkvdak" path="res://scenes/evidence_button.tscn" id="4_djd1h"]
+[ext_resource type="PackedScene" uid="uid://02pjp18u3xp" path="res://scenes/profile_button.tscn" id="5_wl0r1"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_djd1h"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rmmsx"]
+content_margin_left = 10.0
+content_margin_top = 4.0
+content_margin_right = 10.0
+content_margin_bottom = 4.0
 bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yqcxt"]
-content_margin_left = 3.0
-content_margin_top = 3.0
-content_margin_right = 3.0
-content_margin_bottom = 3.0
+content_margin_left = 10.0
+content_margin_top = 4.0
+content_margin_right = 10.0
+content_margin_bottom = 4.0
 bg_color = Color(0.09803922, 0.09803922, 0.09803922, 1)
 border_width_left = 1
 border_width_top = 1
@@ -82,6 +87,8 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="ItemName" type="Label" parent="Notebook/Evidence" unique_id=495637658]
+custom_minimum_size = Vector2(213, 97)
+custom_maximum_size = Vector2(213, 97)
 layout_mode = 0
 offset_left = 424.0
 offset_top = 31.0
@@ -109,7 +116,65 @@ theme_override_fonts/font = ExtResource("1_djd1h")
 theme_override_font_sizes/font_size = 32
 autowrap_mode = 2
 
-[node name="Profiles" type="GridContainer" parent="Notebook" unique_id=2054127251]
+[node name="Profiles" type="TextureRect" parent="Notebook" unique_id=1621689732]
 visible = false
 layout_mode = 2
+texture = ExtResource("3_djd1h")
+expand_mode = 1
 metadata/_tab_index = 1
+
+[node name="ProfileGrid" type="GridContainer" parent="Notebook/Profiles" unique_id=2054127251]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 71.0
+offset_right = 248.0
+offset_bottom = 279.0
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 16
+columns = 2
+
+[node name="ProfileButton" parent="Notebook/Profiles/ProfileGrid" unique_id=1457055613 instance=ExtResource("5_wl0r1")]
+layout_mode = 2
+profile = "Mr. Pumpkin"
+
+[node name="ProfileButton2" parent="Notebook/Profiles/ProfileGrid" unique_id=1351059009 instance=ExtResource("5_wl0r1")]
+layout_mode = 2
+profile = "Lady Lemon"
+
+[node name="ProfileButton3" parent="Notebook/Profiles/ProfileGrid" unique_id=477988893 instance=ExtResource("5_wl0r1")]
+layout_mode = 2
+profile = "Mr. Chili"
+
+[node name="ProfileButton4" parent="Notebook/Profiles/ProfileGrid" unique_id=436992236 instance=ExtResource("5_wl0r1")]
+layout_mode = 2
+profile = "Mr. Onion"
+
+[node name="ProfileName" type="Label" parent="Notebook/Profiles" unique_id=1459765763]
+custom_minimum_size = Vector2(213, 97)
+custom_maximum_size = Vector2(213, 97)
+layout_mode = 0
+offset_left = 56.0
+offset_top = 327.0
+offset_right = 269.0
+offset_bottom = 424.0
+theme_override_colors/font_color = Color(0.09803922, 0.09803922, 0.09803922, 1)
+theme_override_colors/font_outline_color = Color(0.09803922, 0.09803922, 0.09803922, 1)
+theme_override_fonts/font = ExtResource("1_djd1h")
+theme_override_font_sizes/font_size = 46
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="ProfileDesc" type="Label" parent="Notebook/Profiles" unique_id=1805654180]
+custom_minimum_size = Vector2(216, 432)
+custom_maximum_size = Vector2(216, 432)
+layout_mode = 0
+offset_left = 424.0
+offset_top = 39.0
+offset_right = 640.0
+offset_bottom = 471.0
+theme_override_colors/font_color = Color(0.09803922, 0.09803922, 0.09803922, 1)
+theme_override_colors/font_outline_color = Color(0.09803922, 0.09803922, 0.09803922, 1)
+theme_override_fonts/font = ExtResource("1_djd1h")
+theme_override_font_sizes/font_size = 32
+autowrap_mode = 2

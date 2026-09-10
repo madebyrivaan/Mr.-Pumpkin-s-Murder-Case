@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://02pjp18u3xp"]
+
+[ext_resource type="Texture2D" uid="uid://cddkxliw80kgv" path="res://sprites/gui/bg_placeholder3.png" id="1_2krox"]
+[ext_resource type="Script" uid="uid://o28xjf0u7sh8" path="res://scripts/profile_button.gd" id="2_2krox"]
+
+[node name="ProfileButton" type="TextureButton" unique_id=408976175]
+custom_minimum_size = Vector2(96, 96)
+custom_maximum_size = Vector2(96, 96)
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("1_2krox")
+stretch_mode = 0
+script = ExtResource("2_2krox")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
