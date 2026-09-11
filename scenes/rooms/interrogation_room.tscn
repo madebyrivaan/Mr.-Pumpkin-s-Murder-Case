@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bg2v2fdt755v1" path="res://scenes/dialogue_box.tscn" id="1_8h0ma"]
 [ext_resource type="Script" uid="uid://c55w6cd80frma" path="res://scripts/interrogation_room.gd" id="1_13bab"]
+[ext_resource type="FontFile" uid="uid://ps5xn0ajg1ap" path="res://fonts/Mister Pixel Regular.otf" id="3_m0xdu"]
 
 [node name="interrogation_room" type="CanvasGroup" unique_id=1565786133]
 script = ExtResource("1_13bab")
@@ -15,12 +16,30 @@ offset_left = 304.0
 offset_top = 104.0
 offset_right = 632.0
 offset_bottom = 176.0
+theme_override_colors/font_color = Color(1, 0.9529412, 0.8627451, 1)
+theme_override_fonts/font = ExtResource("3_m0xdu")
+theme_override_font_sizes/font_size = 32
 
 [node name="Button2" type="Button" parent="ButtonsLayer" unique_id=2059635155]
 offset_left = 304.0
 offset_top = 200.0
 offset_right = 632.0
 offset_bottom = 272.0
+theme_override_colors/font_color = Color(1, 0.9529412, 0.8627451, 1)
+theme_override_fonts/font = ExtResource("3_m0xdu")
+theme_override_font_sizes/font_size = 32
+
+[node name="NextLayer" type="CanvasLayer" parent="." unique_id=1833962893]
+
+[node name="Button" type="Button" parent="NextLayer" unique_id=1769284684]
+offset_left = 304.0
+offset_top = 152.0
+offset_right = 632.0
+offset_bottom = 224.0
+theme_override_colors/font_color = Color(1, 0.9529412, 0.8627451, 1)
+theme_override_fonts/font = ExtResource("3_m0xdu")
+theme_override_font_sizes/font_size = 32
+text = "Next ->"
 
 [connection signal="pressed" from="ButtonsLayer/Button1" to="." method="_on_button_1_pressed"]
 [connection signal="pressed" from="ButtonsLayer/Button2" to="." method="_on_button_2_pressed"]
