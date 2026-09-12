@@ -1,0 +1,451 @@
+[gd_scene format=3 uid="uid://i6rl2cgu5y0f"]
+
+[ext_resource type="Script" uid="uid://drs05450njirb" path="res://scripts/interrogation.gd" id="1_inter"]
+[ext_resource type="Texture2D" uid="uid://c4bw254q073d8" path="res://Assets/Art asset/interrogation_room/interview room.png" id="2_bg"]
+[ext_resource type="FontFile" uid="uid://ps5xn0ajg1ap" path="res://fonts/Mister Pixel Regular.otf" id="3_font"]
+[ext_resource type="Texture2D" uid="uid://d2dgbbvjkh5n0" path="res://Assets/Art asset/Characters/lemon_dialog.png" id="4_lemon"]
+[ext_resource type="Texture2D" uid="uid://bvewnyga3pmxl" path="res://Assets/Art asset/Characters/chili.png" id="5_chili"]
+[ext_resource type="Texture2D" uid="uid://byt12p2ksugdq" path="res://Assets/Art asset/Characters/detective.png" id="6_onion"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hub"]
+bg_color = Color(0.08, 0.08, 0.08, 0.92)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_card"]
+bg_color = Color(0.12, 0.12, 0.12, 0.95)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.952941, 0.862745, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_diag"]
+bg_color = Color(0.08, 0.08, 0.08, 0.96)
+border_width_top = 2
+border_color = Color(1, 0.952941, 0.862745, 1)
+
+[node name="Interrogation" type="Control" unique_id=471035048]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_inter")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1370106848]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_bg")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="HubPanel" type="Panel" parent="." unique_id=1666212655]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hub")
+
+[node name="TopBar" type="HBoxContainer" parent="HubPanel" unique_id=589505826]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 20.0
+offset_top = 16.0
+offset_right = -20.0
+offset_bottom = 60.0
+grow_horizontal = 2
+
+[node name="Title" type="Label" parent="HubPanel/TopBar" unique_id=646100053]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 0.952941, 0.862745, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 28
+text = "Haven Manor: Interrogation Room"
+
+[node name="NotebookButton" type="Button" parent="HubPanel/TopBar" unique_id=674714726]
+custom_minimum_size = Vector2(180, 38)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 22
+text = "Detective Notebook"
+
+[node name="SuspectsGrid" type="HBoxContainer" parent="HubPanel" unique_id=1112436572]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -440.0
+offset_top = -180.0
+offset_right = 440.0
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="LemonCard" type="Panel" parent="HubPanel/SuspectsGrid" unique_id=326012574]
+custom_minimum_size = Vector2(270, 260)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_card")
+
+[node name="VBox" type="VBoxContainer" parent="HubPanel/SuspectsGrid/LemonCard" unique_id=1139329519]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = 12.0
+offset_right = -12.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="Portrait" type="TextureRect" parent="HubPanel/SuspectsGrid/LemonCard/VBox" unique_id=494224507]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+texture = ExtResource("4_lemon")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Name" type="Label" parent="HubPanel/SuspectsGrid/LemonCard/VBox" unique_id=1221912866]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.952941, 0.862745, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 24
+text = "Lady Lemon"
+horizontal_alignment = 1
+
+[node name="Status" type="Label" parent="HubPanel/SuspectsGrid/LemonCard" unique_id=2047810252]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -80.0
+offset_bottom = -55.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.8, 0.75, 0.65, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 18
+text = "Awaiting Questioning"
+horizontal_alignment = 1
+
+[node name="SelectButton" type="Button" parent="HubPanel/SuspectsGrid/LemonCard" unique_id=1837611853]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -50.0
+offset_right = -20.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 22
+text = "Question Suspect"
+
+[node name="ChiliCard" type="Panel" parent="HubPanel/SuspectsGrid" unique_id=341558459]
+custom_minimum_size = Vector2(270, 260)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_card")
+
+[node name="VBox" type="VBoxContainer" parent="HubPanel/SuspectsGrid/ChiliCard" unique_id=1309792352]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = 12.0
+offset_right = -12.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="Portrait" type="TextureRect" parent="HubPanel/SuspectsGrid/ChiliCard/VBox" unique_id=1150924884]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+texture = ExtResource("5_chili")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Name" type="Label" parent="HubPanel/SuspectsGrid/ChiliCard/VBox" unique_id=784058311]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.952941, 0.862745, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 24
+text = "Mr. Chili"
+horizontal_alignment = 1
+
+[node name="Status" type="Label" parent="HubPanel/SuspectsGrid/ChiliCard" unique_id=1242783735]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -80.0
+offset_bottom = -55.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.8, 0.75, 0.65, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 18
+text = "Awaiting Questioning"
+horizontal_alignment = 1
+
+[node name="SelectButton" type="Button" parent="HubPanel/SuspectsGrid/ChiliCard" unique_id=771705243]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -50.0
+offset_right = -20.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 22
+text = "Question Suspect"
+
+[node name="OnionCard" type="Panel" parent="HubPanel/SuspectsGrid" unique_id=734164286]
+custom_minimum_size = Vector2(270, 260)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_card")
+
+[node name="VBox" type="VBoxContainer" parent="HubPanel/SuspectsGrid/OnionCard" unique_id=2049829804]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = 12.0
+offset_right = -12.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="Portrait" type="TextureRect" parent="HubPanel/SuspectsGrid/OnionCard/VBox" unique_id=1838853533]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+texture = ExtResource("6_onion")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Name" type="Label" parent="HubPanel/SuspectsGrid/OnionCard/VBox" unique_id=72054223]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.952941, 0.862745, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 24
+text = "Mr. Onion"
+horizontal_alignment = 1
+
+[node name="Status" type="Label" parent="HubPanel/SuspectsGrid/OnionCard" unique_id=127366718]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -80.0
+offset_bottom = -55.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.8, 0.75, 0.65, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 18
+text = "Awaiting Questioning"
+horizontal_alignment = 1
+
+[node name="SelectButton" type="Button" parent="HubPanel/SuspectsGrid/OnionCard" unique_id=962291639]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -50.0
+offset_right = -20.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 22
+text = "Question Suspect"
+
+[node name="GarlicSummary" type="Label" parent="HubPanel" unique_id=2099811861]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.104166664
+anchor_top = 0.6888889
+anchor_right = 0.8958333
+anchor_bottom = 0.8703704
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 0.95, 0.8, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="AccuseButton" type="Button" parent="HubPanel" unique_id=1810785453]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -160.0
+offset_top = -60.0
+offset_right = 160.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 0.952941, 0.862745, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 24
+disabled = true
+text = "Make Final Accusation ->"
+
+[node name="DialoguePanel" type="Panel" parent="." unique_id=180361171]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_diag")
+
+[node name="SuspectPortrait" type="TextureRect" parent="DialoguePanel" unique_id=1713229347]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 60.0
+offset_right = 168.0
+offset_bottom = 188.0
+expand_mode = 1
+stretch_mode = 5
+
+[node name="SpeakerLabel" type="Label" parent="DialoguePanel" unique_id=369740752]
+layout_mode = 0
+offset_left = 190.0
+offset_top = 70.0
+offset_right = 600.0
+offset_bottom = 110.0
+theme_override_colors/font_color = Color(1, 0.952941, 0.862745, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 32
+text = "Speaker"
+
+[node name="TextLabel" type="Label" parent="DialoguePanel" unique_id=1096589895]
+layout_mode = 0
+offset_left = 190.0
+offset_top = 120.0
+offset_right = 900.0
+offset_bottom = 280.0
+theme_override_colors/font_color = Color(0.9, 0.88, 0.85, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 24
+text = "Dialogue line here..."
+autowrap_mode = 2
+
+[node name="ChoicesBox" type="VBoxContainer" parent="DialoguePanel" unique_id=1378312999]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -360.0
+offset_top = -220.0
+offset_right = 360.0
+offset_bottom = -80.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 12
+
+[node name="Choice1" type="Button" parent="DialoguePanel/ChoicesBox" unique_id=1069811659]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.952941, 0.862745, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 22
+text = "Option 1"
+
+[node name="Choice2" type="Button" parent="DialoguePanel/ChoicesBox" unique_id=130403162]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.952941, 0.862745, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 22
+text = "Option 2"
+
+[node name="NextButton" type="Button" parent="DialoguePanel" unique_id=967822121]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -140.0
+offset_right = 100.0
+offset_bottom = -90.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 0.952941, 0.862745, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 24
+text = "Next ->"
+
+[node name="BackToHubButton" type="Button" parent="DialoguePanel" unique_id=1549536993]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = -60.0
+offset_right = 190.0
+offset_bottom = -20.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 20
+text = "<- Back to Hub"
+
+[node name="NotebookButton" type="Button" parent="DialoguePanel" unique_id=559625872]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -210.0
+offset_top = -60.0
+offset_right = -30.0
+offset_bottom = -20.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 20
+text = "Open Notebook"

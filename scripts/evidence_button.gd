@@ -18,11 +18,6 @@ func _ready() -> void:
 	hide()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-	
-	
 
 func match_evidence(evidence_name : String) -> void:
 	if evidence_name not in evidence_matcher.keys() : return

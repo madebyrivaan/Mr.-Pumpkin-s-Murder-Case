@@ -15,11 +15,6 @@ func _ready() -> void:
 	match_profile(profile)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-	
-	
 
 func match_profile(profile_name : String) -> void:
 	if profile_name not in profile_matcher.keys() : return

@@ -30,6 +30,14 @@ border_color = Color(1, 0.9529412, 0.8627451, 1)
 process_mode = 3
 script = ExtResource("1_6ub6w")
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=997272804]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.23137255, 0.23137255, 0.23137255, 0.94509804)
+
 [node name="Notebook" type="TabContainer" parent="." unique_id=1704977329]
 anchors_preset = -1
 anchor_left = 0.14166667
@@ -46,9 +54,10 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_djd1h")
 theme_override_styles/tab_unselected = SubResource("StyleBoxFlat_rmmsx")
 theme_override_styles/tab_selected = SubResource("StyleBoxFlat_yqcxt")
 tab_alignment = 1
-current_tab = 0
+current_tab = 1
 
 [node name="Evidence" type="TextureRect" parent="Notebook" unique_id=368804411]
+visible = false
 layout_mode = 2
 texture = ExtResource("3_djd1h")
 expand_mode = 1
@@ -102,6 +111,25 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
+[node name="CloseLabel" type="Label" parent="Notebook/Evidence" unique_id=886046440]
+custom_minimum_size = Vector2(213, 97)
+custom_maximum_size = Vector2(207.79, 27.785)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.06686047
+anchor_top = 0.9058116
+anchor_right = 0.3688808
+anchor_bottom = 0.961493
+theme_override_colors/font_color = Color(0.09803922, 0.09803922, 0.09803922, 1)
+theme_override_colors/font_outline_color = Color(0.09803922, 0.09803922, 0.09803922, 1)
+theme_override_fonts/font = ExtResource("1_djd1h")
+theme_override_font_sizes/font_size = 26
+text = "ESC TO Close"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
 [node name="ItemDesc" type="Label" parent="Notebook/Evidence" unique_id=2044071300]
 custom_minimum_size = Vector2(216, 344)
 custom_maximum_size = Vector2(216, 344)
@@ -117,7 +145,6 @@ theme_override_font_sizes/font_size = 32
 autowrap_mode = 2
 
 [node name="Profiles" type="TextureRect" parent="Notebook" unique_id=1621689732]
-visible = false
 layout_mode = 2
 texture = ExtResource("3_djd1h")
 expand_mode = 1
@@ -178,3 +205,22 @@ theme_override_colors/font_outline_color = Color(0.09803922, 0.09803922, 0.09803
 theme_override_fonts/font = ExtResource("1_djd1h")
 theme_override_font_sizes/font_size = 32
 autowrap_mode = 2
+
+[node name="CloseLabel" type="Label" parent="Notebook/Profiles" unique_id=240576631]
+custom_minimum_size = Vector2(213, 97)
+custom_maximum_size = Vector2(207.79, 27.785)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.06686047
+anchor_top = 0.9058116
+anchor_right = 0.3688808
+anchor_bottom = 0.961493
+theme_override_colors/font_color = Color(0.09803922, 0.09803922, 0.09803922, 1)
+theme_override_colors/font_outline_color = Color(0.09803922, 0.09803922, 0.09803922, 1)
+theme_override_fonts/font = ExtResource("1_djd1h")
+theme_override_font_sizes/font_size = 26
+text = "ESC TO Close"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true

@@ -1,0 +1,121 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/intro.gd" id="1_intro"]
+[ext_resource type="Texture2D" path="res://Assets/Art asset/haven manor/haven manor.png" id="2_bg"]
+[ext_resource type="FontFile" path="res://fonts/Mister Pixel Regular.otf" id="3_font"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_box"]
+bg_color = Color(0.0980392, 0.0980392, 0.0980392, 0.95)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.952941, 0.862745, 1)
+
+[node name="Intro" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_intro")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_bg")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Portrait" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 200.0
+offset_right = 188.0
+offset_bottom = 328.0
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextBox" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = -180.0
+offset_right = -40.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_box")
+
+[node name="SpeakerLabel" type="Label" parent="TextBox"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 12.0
+offset_right = 600.0
+offset_bottom = 44.0
+theme_override_colors/font_color = Color(1, 0.952941, 0.862745, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 28
+text = "Haven Manor"
+
+[node name="TextLabel" type="Label" parent="TextBox"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 50.0
+offset_right = 720.0
+offset_bottom = 145.0
+theme_override_colors/font_color = Color(0.9, 0.88, 0.85, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 24
+text = "Story text goes here..."
+autowrap_mode = 2
+
+[node name="ContinueButton" type="Button" parent="TextBox"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -170.0
+offset_top = -55.0
+offset_right = -20.0
+offset_bottom = -15.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 0.952941, 0.862745, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 24
+text = "Next ->"
+
+[node name="SkipButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -150.0
+offset_top = 20.0
+offset_right = -30.0
+offset_bottom = 56.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 20
+text = "Skip Intro >>"
+
+[node name="FlashRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0)

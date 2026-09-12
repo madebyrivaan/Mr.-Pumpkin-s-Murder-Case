@@ -1,0 +1,149 @@
+extends Node
+
+# Signal when evidence is added
+signal evidence_collected(id: String)
+signal suspect_updated(suspect_name: String)
+
+# Evidence database
+var evidence_db: Dictionary = {
+	"champagne_bottle": {
+		"name": "Champagne Bottle",
+		"icon": "res://sprites/evidence/Champagne.png",
+		"desc": "A vintage champagne bottle... half empty. Mr. Pumpkin was drinking alone before the guests entered."
+	},
+	"champagne_glass": {
+		"name": "Champagne Glass",
+		"icon": "res://sprites/evidence/Glass.png",
+		"desc": "Mr. Pumpkin's glass. The faint lingering scent differs distinctly from the bottle—a sharp, concentrated citrus aroma!"
+	},
+	"shovel": {
+		"name": "Garden Shovel",
+		"icon": "res://sprites/evidence/Shovel.png",
+		"desc": "The murder weapon pinned into the victim. Smeared with fingerprints... yet left standing upright."
+	},
+	"cigar_ash": {
+		"name": "Cigar Ash",
+		"icon": "res://sprites/evidence/Cigar ash.png",
+		"desc": "A scorched burn mark on the wooden desk left by fresh cigar ash. Mr. Pumpkin never smoked."
+	},
+	"diamond_ring": {
+		"name": "Diamond Ring",
+		"icon": "res://sprites/evidence/Glass.png",
+		"desc": "An expensive diamond ring found dropped near the desk. Clearly belongs to high society."
+	},
+	"document_page": {
+		"name": "Document Page",
+		"icon": "res://sprites/evidence/Document page.png",
+		"desc": "A torn page from an extortion and smuggling contract. Scented with machine oil and desk sap."
+	},
+	"pumpkin_body": {
+		"name": "Mr. Pumpkin's Body",
+		"icon": "res://Assets/Art asset/Characters/pumpkin_die.png",
+		"desc": "The tyrannical victim. Oddly, there are zero signs of physical struggle on the body."
+	}
+}
+
+# Suspect profiles database
+var suspect_db: Dictionary = {
+	"Mr. Pumpkin": {
+		"role": "The Victim",
+		"icon": "res://Assets/Art asset/Characters/pumpkin.png",
+		"traits": "Wealthy, tyrannical farm tycoon. Controlled water and fertilizer supplies. Universally disliked.",
+		"notes": ["Found dead in his private office pinned by a garden shovel.", "Curiously, showed zero defensive wounds or signs of struggle."]
+	},
+	"Lady Lemon": {
+		"role": "Socialite Partner",
+		"icon": "res://Assets/Art asset/Characters/lemon_dialog.png",
+		"traits": "Haughty, flashy socialite. Inherited partnership from her late husband Green Lemon. Sour biological acidity.",
+		"notes": []
+	},
+	"Mr. Chili": {
+		"role": "Bank President",
+		"icon": "res://Assets/Art asset/Characters/chili.png",
+		"traits": "Hot-tempered, volatile banker. Smokes cigars. Turns bright red when pressured.",
+		"notes": []
+	},
+	"Mr. Onion": {
+		"role": "Underworld Broker",
+		"icon": "res://Assets/Art asset/Characters/detective.png",
+		"traits": "Mysterious, multi-layered criminal broker. Dapper suit, persistent smirk.",
+		"notes": []
+	}
+}
+
+var collected_evidence: Array[String] = []
+var interrogated_suspects: Dictionary = {
+	"Lady Lemon": false,
+	"Mr. Chili": false,
+	"Mr. Onion": false
+}
+
+var bgm_player: AudioStreamPlayer
+
+func _ready() -> void:
+	process_mode = Node.PROCESS_MODE_ALWAYS
+	bgm_player = AudioStreamPlayer.new()
+	bgm_player.bus = "Master"
+	add_child(bgm_player)
+
+func reset_game() -> void:
+	collected_evidence.clear()
+	interrogated_suspects["Lady Lemon"] = false
+	interrogated_suspects["Mr. Chili"] = false
+	interrogated_suspects["Mr. Onion"] = false
+	suspect_db["Lady Lemon"]["notes"] = []
+	suspect_db["Mr. Chili"]["notes"] = []
+	suspect_db["Mr. Onion"]["notes"] = []
+	suspect_db["Mr. Pumpkin"]["notes"] = [
+		"Found dead in his private office pinned by a garden shovel.",
+		"Curiously, showed zero defensive wounds or signs of struggle."
+	]
+
+func collect_evidence(id: String) -> bool:
+	if not collected_evidence.has(id):
+		collected_evidence.append(id)
+		evidence_collected.emit(id)
+		return true
+	return false
+
+func has_evidence(id: String) -> bool:
+	return collected_evidence.has(id)
+
+func get_evidence_count() -> int:
+	return collected_evidence.size()
+
+func all_clues_found() -> bool:
+	return collected_evidence.size() >= 5
+
+func add_suspect_note(suspect_name: String, note: String) -> void:
+	if suspect_db.has(suspect_name):
+		if not suspect_db[suspect_name]["notes"].has(note):
+			suspect_db[suspect_name]["notes"].append(note)
+			suspect_updated.emit(suspect_name)
+
+func mark_interrogated(suspect_name: String) -> void:
+	if interrogated_suspects.has(suspect_name):
+		interrogated_suspects[suspect_name] = true
+
+func all_suspects_interrogated() -> bool:
+	return (
+		interrogated_suspects["Lady Lemon"] and
+		interrogated_suspects["Mr. Chili"] and
+		interrogated_suspects["Mr. Onion"]
+	)
+
+func play_bgm(track_type: String) -> void:
+	var path := ""
+	if track_type == "menu" or track_type == "investigation":
+		path = "res://Assets/Music + SFX/mainmenu_song.ogg"
+	elif track_type == "climax" or track_type == "interrogation" or track_type == "accusation":
+		path = "res://Assets/Music + SFX/gameclimax_song.ogg"
+	
+	if path != "":
+		var stream = load(path)
+		if bgm_player.stream != stream or not bgm_player.playing:
+			bgm_player.stream = stream
+			bgm_player.play()
+
+func stop_bgm() -> void:
+	bgm_player.stop()

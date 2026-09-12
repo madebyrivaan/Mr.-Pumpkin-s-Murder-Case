@@ -1,0 +1,380 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/final_accusation.gd" id="1_accuse"]
+[ext_resource type="Texture2D" path="res://Assets/Art asset/interrogation_room/interview room.png" id="2_bg"]
+[ext_resource type="FontFile" path="res://fonts/Mister Pixel Regular.otf" id="3_font"]
+[ext_resource type="Texture2D" path="res://Assets/Art asset/Characters/lemon_dialog.png" id="4_lemon"]
+[ext_resource type="Texture2D" path="res://Assets/Art asset/Characters/chili.png" id="5_chili"]
+[ext_resource type="Texture2D" path="res://Assets/Art asset/Characters/detective.png" id="6_onion"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
+bg_color = Color(0.08, 0.08, 0.08, 0.94)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_card"]
+bg_color = Color(0.12, 0.12, 0.12, 0.95)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.952941, 0.862745, 1)
+
+[node name="FinalAccusation" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_accuse")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_bg")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PromptPanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+
+[node name="HeaderBox" type="VBoxContainer" parent="PromptPanel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 20.0
+offset_bottom = 100.0
+grow_horizontal = 2
+theme_override_constants/separation = 4
+alignment = 1
+
+[node name="Title" type="Label" parent="PromptPanel/HeaderBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.952941, 0.862745, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 36
+text = "THE FINAL ACCUSATION"
+horizontal_alignment = 1
+
+[node name="Subtitle" type="Label" parent="PromptPanel/HeaderBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85, 0.8, 0.7, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 22
+text = "Inspector Garlic: 'The time has come. Who killed Mr. Pumpkin?'"
+horizontal_alignment = 1
+
+[node name="SuspectsGrid" type="HBoxContainer" parent="PromptPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -440.0
+offset_top = -140.0
+offset_right = 440.0
+offset_bottom = 140.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="LemonCard" type="Panel" parent="PromptPanel/SuspectsGrid"]
+custom_minimum_size = Vector2(270, 280)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_card")
+
+[node name="VBox" type="VBoxContainer" parent="PromptPanel/SuspectsGrid/LemonCard"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = 16.0
+offset_right = -12.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Portrait" type="TextureRect" parent="PromptPanel/SuspectsGrid/LemonCard/VBox"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+texture = ExtResource("4_lemon")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Name" type="Label" parent="PromptPanel/SuspectsGrid/LemonCard/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.952941, 0.862745, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 24
+text = "Lady Lemon"
+horizontal_alignment = 1
+
+[node name="Role" type="Label" parent="PromptPanel/SuspectsGrid/LemonCard/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.75, 0.65, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 18
+text = "The Humiliated Diva"
+horizontal_alignment = 1
+
+[node name="AccuseButton" type="Button" parent="PromptPanel/SuspectsGrid/LemonCard"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -54.0
+offset_right = -16.0
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 0.952941, 0.862745, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 22
+text = "Accuse Lady Lemon"
+
+[node name="ChiliCard" type="Panel" parent="PromptPanel/SuspectsGrid"]
+custom_minimum_size = Vector2(270, 280)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_card")
+
+[node name="VBox" type="VBoxContainer" parent="PromptPanel/SuspectsGrid/ChiliCard"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = 16.0
+offset_right = -12.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Portrait" type="TextureRect" parent="PromptPanel/SuspectsGrid/ChiliCard/VBox"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+texture = ExtResource("5_chili")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Name" type="Label" parent="PromptPanel/SuspectsGrid/ChiliCard/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.952941, 0.862745, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 24
+text = "Mr. Chili"
+horizontal_alignment = 1
+
+[node name="Role" type="Label" parent="PromptPanel/SuspectsGrid/ChiliCard/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.75, 0.65, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 18
+text = "The Hot-Tempered Banker"
+horizontal_alignment = 1
+
+[node name="AccuseButton" type="Button" parent="PromptPanel/SuspectsGrid/ChiliCard"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -54.0
+offset_right = -16.0
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 0.952941, 0.862745, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 22
+text = "Accuse Mr. Chili"
+
+[node name="OnionCard" type="Panel" parent="PromptPanel/SuspectsGrid"]
+custom_minimum_size = Vector2(270, 280)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_card")
+
+[node name="VBox" type="VBoxContainer" parent="PromptPanel/SuspectsGrid/OnionCard"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = 16.0
+offset_right = -12.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Portrait" type="TextureRect" parent="PromptPanel/SuspectsGrid/OnionCard/VBox"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+texture = ExtResource("6_onion")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Name" type="Label" parent="PromptPanel/SuspectsGrid/OnionCard/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.952941, 0.862745, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 24
+text = "Mr. Onion"
+horizontal_alignment = 1
+
+[node name="Role" type="Label" parent="PromptPanel/SuspectsGrid/OnionCard/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.75, 0.65, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 18
+text = "The Shadowy Broker"
+horizontal_alignment = 1
+
+[node name="AccuseButton" type="Button" parent="PromptPanel/SuspectsGrid/OnionCard"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -54.0
+offset_right = -16.0
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 0.952941, 0.862745, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 22
+text = "Accuse Mr. Onion"
+
+[node name="ReviewNotesButton" type="Button" parent="PromptPanel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -110.0
+offset_top = -55.0
+offset_right = 110.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 22
+text = "Review Notebook"
+
+[node name="ResultPanel" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+
+[node name="ResultTitle" type="Label" parent="ResultPanel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 30.0
+offset_bottom = 70.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.952941, 0.862745, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 32
+text = "RESULT TITLE"
+horizontal_alignment = 1
+
+[node name="SuspectPortrait" type="TextureRect" parent="ResultPanel"]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 100.0
+offset_right = 188.0
+offset_bottom = 228.0
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ResultText" type="Label" parent="ResultPanel"]
+layout_mode = 0
+offset_left = 220.0
+offset_top = 100.0
+offset_right = 900.0
+offset_bottom = 440.0
+theme_override_colors/font_color = Color(0.9, 0.88, 0.85, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 22
+text = "Result details text..."
+autowrap_mode = 2
+
+[node name="NextStepButton" type="Button" parent="ResultPanel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -80.0
+offset_top = -70.0
+offset_right = 80.0
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 0.952941, 0.862745, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 24
+text = "Continue ->"
+
+[node name="RetryButton" type="Button" parent="ResultPanel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -210.0
+offset_top = -70.0
+offset_right = -10.0
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 22
+text = "Rethink Accusation"
+
+[node name="RestartButton" type="Button" parent="ResultPanel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -70.0
+offset_right = 210.0
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 22
+text = "Return to Menu"
