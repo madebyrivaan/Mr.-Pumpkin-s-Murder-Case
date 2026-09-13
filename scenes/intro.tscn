@@ -5,18 +5,12 @@
 [ext_resource type="FontFile" uid="uid://ps5xn0ajg1ap" path="res://fonts/Mister Pixel Regular.otf" id="3_font"]
 [ext_resource type="Texture2D" uid="uid://dadj48yspgelr" path="res://Assets/Art asset/UI/text_box/screen_text.png" id="4_es01l"]
 [ext_resource type="Texture2D" uid="uid://d2uavjsl64hqx" path="res://Assets/Art asset/UI/-_.png" id="4_i2l1n"]
+[ext_resource type="Texture2D" uid="uid://bhauo53oh3a5w" path="res://Assets/Art asset/UI/name_slot/bg_nameslot.png" id="5_0naf5"]
 [ext_resource type="Texture2D" uid="uid://dgqtk2hpr6vpg" path="res://Assets/Art asset/UI/selected_-_.png" id="5_wfs7u"]
+[ext_resource type="Texture2D" uid="uid://b6y3bxcjr0qg8" path="res://Assets/Art asset/UI/name_slot/border.png" id="6_bu1yb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_box"]
 bg_color = Color(0.0980392, 0.0980392, 0.0980392, 0.95)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(1, 0.952941, 0.862745, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_portrait_frame"]
-bg_color = Color(0.0980392, 0.0980392, 0.0980392, 1)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
@@ -44,11 +38,14 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="Portrait" type="TextureRect" parent="." unique_id=1794523023]
-layout_mode = 0
-anchor_left = 0.0625
-anchor_top = 0.37037036
-anchor_right = 0.19583334
-anchor_bottom = 0.6074074
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.029166667
+anchor_top = 0.36851853
+anchor_right = 0.19166666
+anchor_bottom = 0.662963
+grow_horizontal = 2
+grow_vertical = 2
 expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
@@ -91,6 +88,7 @@ text = "Story text goes here..."
 autowrap_mode = 2
 
 [node name="CardContainer" type="Control" parent="." unique_id=1483920194]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -103,10 +101,10 @@ mouse_filter = 2
 z_index = 2
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.26458332
-anchor_top = 0.18148148
-anchor_right = 0.7260417
-anchor_bottom = 0.32592592
+anchor_left = 0.24270834
+anchor_top = 0.12222222
+anchor_right = 0.74791664
+anchor_bottom = 0.31111112
 texture = ExtResource("4_es01l")
 metadata/_edit_use_anchors_ = true
 
@@ -114,18 +112,14 @@ metadata/_edit_use_anchors_ = true
 z_index = 3
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.30833334
-anchor_top = 0.17037037
-anchor_right = 0.54583335
-anchor_bottom = 0.2537037
-offset_left = -94.59166
-offset_top = -3.288889
-offset_right = 28.195831
-offset_bottom = 12.211111
+anchor_left = 0.087577336
+anchor_top = 0.13812636
+anchor_right = 0.7164433
+anchor_bottom = 0.52941185
 grow_horizontal = 2
 theme_override_colors/font_color = Color(1, 0.952941, 0.862745, 1)
 theme_override_fonts/font = ExtResource("3_font")
-theme_override_font_sizes/font_size = 21
+theme_override_font_sizes/font_size = 28
 text = "The key figures involved "
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
@@ -134,23 +128,19 @@ metadata/_edit_use_anchors_ = true
 z_index = 3
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.46666667
-anchor_top = 0.22962964
-anchor_right = 0.70416665
-anchor_bottom = 0.31296295
-offset_left = -12.733322
-offset_top = 24.088888
-offset_right = 43.05417
-offset_bottom = 39.58889
+anchor_left = 0.43979383
+anchor_top = 0.5442265
+anchor_right = 0.8975257
+anchor_bottom = 1.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(1, 0.952941, 0.862745, 1)
 theme_override_fonts/font = ExtResource("3_font")
-theme_override_font_sizes/font_size = 21
+theme_override_font_sizes/font_size = 29
 text = "in this gathering.."
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="CardBg" type="ColorRect" parent="CardContainer" unique_id=782194012]
+[node name="CardBg" type="ColorRect" parent="CardContainer" unique_id=340888996]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -158,7 +148,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-color = Color(0.0980392, 0.0980392, 0.0980392, 1)
+color = Color(0.09239707, 0.09239706, 0.09239706, 1)
 
 [node name="CardsHBox" type="HBoxContainer" parent="CardContainer" unique_id=983145621]
 layout_mode = 1
@@ -178,25 +168,40 @@ theme_override_constants/separation = 36
 alignment = 1
 
 [node name="PumpkinCard" type="VBoxContainer" parent="CardContainer/CardsHBox" unique_id=101]
+custom_minimum_size = Vector2(200, 0)
+custom_maximum_size = Vector2(400, 200)
 layout_mode = 2
 mouse_filter = 2
 theme_override_constants/separation = 12
 alignment = 1
 
-[node name="PortraitFrame" type="PanelContainer" parent="CardContainer/CardsHBox/PumpkinCard" unique_id=102]
-custom_minimum_size = Vector2(132, 132)
+[node name="PortraitFrame" type="TextureRect" parent="CardContainer/CardsHBox/PumpkinCard" unique_id=664697751]
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_portrait_frame")
+texture = ExtResource("5_0naf5")
 
 [node name="CardPortrait" type="TextureRect" parent="CardContainer/CardsHBox/PumpkinCard/PortraitFrame" unique_id=103]
 custom_minimum_size = Vector2(128, 128)
-layout_mode = 2
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 148.0
+offset_bottom = 148.0
 mouse_filter = 2
 expand_mode = 1
 stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="CardContainer/CardsHBox/PumpkinCard/PortraitFrame" unique_id=1392682248]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_bu1yb")
 
 [node name="CardName" type="Label" parent="CardContainer/CardsHBox/PumpkinCard" unique_id=104]
 layout_mode = 2
@@ -213,20 +218,33 @@ mouse_filter = 2
 theme_override_constants/separation = 12
 alignment = 1
 
-[node name="PortraitFrame" type="PanelContainer" parent="CardContainer/CardsHBox/LemonCard" unique_id=202]
-custom_minimum_size = Vector2(132, 132)
+[node name="PortraitFrame" type="TextureRect" parent="CardContainer/CardsHBox/LemonCard" unique_id=1839714473]
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_portrait_frame")
+texture = ExtResource("5_0naf5")
 
 [node name="CardPortrait" type="TextureRect" parent="CardContainer/CardsHBox/LemonCard/PortraitFrame" unique_id=203]
 custom_minimum_size = Vector2(128, 128)
-layout_mode = 2
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 148.0
+offset_bottom = 148.0
 mouse_filter = 2
 expand_mode = 1
 stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="CardContainer/CardsHBox/LemonCard/PortraitFrame" unique_id=838265850]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_bu1yb")
 
 [node name="CardName" type="Label" parent="CardContainer/CardsHBox/LemonCard" unique_id=204]
 layout_mode = 2
@@ -243,20 +261,33 @@ mouse_filter = 2
 theme_override_constants/separation = 12
 alignment = 1
 
-[node name="PortraitFrame" type="PanelContainer" parent="CardContainer/CardsHBox/ChiliCard" unique_id=302]
-custom_minimum_size = Vector2(132, 132)
+[node name="PortraitFrame" type="TextureRect" parent="CardContainer/CardsHBox/ChiliCard" unique_id=1721747733]
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_portrait_frame")
+texture = ExtResource("5_0naf5")
 
 [node name="CardPortrait" type="TextureRect" parent="CardContainer/CardsHBox/ChiliCard/PortraitFrame" unique_id=303]
 custom_minimum_size = Vector2(128, 128)
-layout_mode = 2
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 148.0
+offset_bottom = 148.0
 mouse_filter = 2
 expand_mode = 1
 stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="CardContainer/CardsHBox/ChiliCard/PortraitFrame" unique_id=1052304648]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_bu1yb")
 
 [node name="CardName" type="Label" parent="CardContainer/CardsHBox/ChiliCard" unique_id=304]
 layout_mode = 2
@@ -273,20 +304,33 @@ mouse_filter = 2
 theme_override_constants/separation = 12
 alignment = 1
 
-[node name="PortraitFrame" type="PanelContainer" parent="CardContainer/CardsHBox/OnionCard" unique_id=402]
-custom_minimum_size = Vector2(132, 132)
+[node name="PortraitFrame" type="TextureRect" parent="CardContainer/CardsHBox/OnionCard" unique_id=1534377078]
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_portrait_frame")
+texture = ExtResource("5_0naf5")
 
 [node name="CardPortrait" type="TextureRect" parent="CardContainer/CardsHBox/OnionCard/PortraitFrame" unique_id=403]
 custom_minimum_size = Vector2(128, 128)
-layout_mode = 2
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 148.0
+offset_bottom = 148.0
 mouse_filter = 2
 expand_mode = 1
 stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="CardContainer/CardsHBox/OnionCard/PortraitFrame" unique_id=1314857353]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_bu1yb")
 
 [node name="CardName" type="Label" parent="CardContainer/CardsHBox/OnionCard" unique_id=404]
 layout_mode = 2

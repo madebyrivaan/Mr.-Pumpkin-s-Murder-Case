@@ -65,7 +65,7 @@ var suspect_db: Dictionary = {
 	},
 	"Mr. Onion": {
 		"role": "Underworld Broker",
-		"icon": "res://Assets/Art asset/Characters/detective.png",
+		"icon": "res://Assets/Art asset/Characters/onion.png",
 		"traits": "Mysterious, multi-layered criminal broker. Dapper suit, persistent smirk.",
 		"notes": []
 	}

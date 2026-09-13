@@ -43,7 +43,7 @@ var intro_steps := [
 			},
 			{
 				"name": "Mr. Onion",
-				"portrait": "res://sprites/dummy.png"
+				"portrait": "res://Assets/Art asset/Characters/onion.png"
 			}
 		]
 	},

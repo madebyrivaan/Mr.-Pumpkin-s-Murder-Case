@@ -51,7 +51,7 @@ func _on_accuse_onion() -> void:
 	
 	result_title.text = "BAD ENDING: THE BROKER ESCAPES"
 	result_title.modulate = Color(1.0, 0.4, 0.4)
-	result_portrait.texture = load("res://Assets/Art asset/Characters/detective.png")
+	result_portrait.texture = load("res://Assets/Art asset/Characters/onion.png")
 	result_text.text = "Mr. Onion smirks coldly:\n'Arresting me for murder based on a stolen paper? My attorneys will shred your badge by morning, Detective.'\n\nAutopsy toxicology reports soon prove Mr. Pumpkin died of severe internal chemical poisoning prior to any shovel strike. By dawn, Lady Lemon has fled across the border with the estate shares.\n\nJustice was cheated.\n\nCASE UNSOLVED."
 
 func _on_accuse_lemon() -> void:
