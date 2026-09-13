@@ -53,7 +53,7 @@ var clue_sfx_player: AudioStreamPlayer
 var clue_sound: AudioStream
 
 func _ready() -> void:
-	GameManager.play_bgm("investigation")
+	GameManager.play_bgm("crime_scene")
 	popup_panel.hide()
 	status_lbl.hide()
 	

@@ -20,7 +20,6 @@ var lemon_ending_steps: Array[Dictionary] = []
 var lemon_step_idx := 0
 
 func _ready() -> void:
-	GameManager.play_bgm("accusation")
 	result_panel.hide()
 	prompt_panel.show()
 	

@@ -154,8 +154,10 @@ func all_suspects_interrogated() -> bool:
 
 func play_bgm(track_type: String) -> void:
 	var path := ""
-	if track_type == "menu" or track_type == "investigation" or track_type == "interrogation":
+	if track_type == "menu" or track_type == "intro" or track_type == "investigation" or track_type == "interrogation":
 		path = "res://Assets/Music + SFX/mainmenu_song.ogg"
+	elif track_type == "crime_scene":
+		path = "res://Assets/Music + SFX/investigationtrack.ogg"
 	elif track_type == "accusation" or track_type == "final_interrogation":
 		path = "res://Assets/Music + SFX/interrogationfull_song.ogg"
 	elif track_type == "climax":

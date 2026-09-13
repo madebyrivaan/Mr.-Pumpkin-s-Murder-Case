@@ -463,7 +463,7 @@ var onion_tree: Dictionary = {
 }
 
 func _ready() -> void:
-	GameManager.play_bgm("interrogation")
+	GameManager.play_bgm("accusation")
 	notebook_btn_hub.pressed.connect(func(): Notebook.toggle())
 	notebook_btn_diag.pressed.connect(func(): Notebook.toggle())
 	back_to_hub_btn.pressed.connect(_return_to_hub)
