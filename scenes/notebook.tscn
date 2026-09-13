@@ -6,25 +6,100 @@
 [ext_resource type="PackedScene" uid="uid://cjtmeonqkvdak" path="res://scenes/evidence_button.tscn" id="4_djd1h"]
 [ext_resource type="PackedScene" uid="uid://02pjp18u3xp" path="res://scenes/profile_button.tscn" id="5_wl0r1"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_djd1h"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_panel"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rmmsx"]
-content_margin_left = 10.0
-content_margin_top = 4.0
-content_margin_right = 10.0
-content_margin_bottom = 4.0
-bg_color = Color(0, 0, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yqcxt"]
-content_margin_left = 10.0
-content_margin_top = 4.0
-content_margin_right = 10.0
-content_margin_bottom = 4.0
-bg_color = Color(0.09803922, 0.09803922, 0.09803922, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tab_unselected"]
+content_margin_left = 22.0
+content_margin_top = 8.0
+content_margin_right = 22.0
+content_margin_bottom = 8.0
+bg_color = Color(0.0980392, 0.0980392, 0.0980392, 1)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
-border_color = Color(1, 0.9529412, 0.8627451, 1)
+border_width_bottom = 1
+border_color = Color(0.28, 0.28, 0.28, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tab_hovered"]
+content_margin_left = 22.0
+content_margin_top = 8.0
+content_margin_right = 22.0
+content_margin_bottom = 8.0
+bg_color = Color(0.2, 0.2, 0.2, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 1
+border_color = Color(1, 0.960784, 0.862745, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tab_selected"]
+content_margin_left = 22.0
+content_margin_top = 8.0
+content_margin_right = 22.0
+content_margin_bottom = 8.0
+bg_color = Color(1, 0.960784, 0.862745, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_color = Color(0.0980392, 0.0980392, 0.0980392, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_normal"]
+content_margin_left = 8.0
+content_margin_top = 5.0
+content_margin_right = 8.0
+content_margin_bottom = 5.0
+bg_color = Color(1, 0.960784, 0.862745, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.0980392, 0.0980392, 0.0980392, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_pressed"]
+content_margin_left = 8.0
+content_margin_top = 5.0
+content_margin_right = 8.0
+content_margin_bottom = 5.0
+bg_color = Color(0.0980392, 0.0980392, 0.0980392, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.0980392, 0.0980392, 0.0980392, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_hover"]
+content_margin_left = 8.0
+content_margin_top = 5.0
+content_margin_right = 8.0
+content_margin_bottom = 5.0
+bg_color = Color(0.901961, 0.858824, 0.768627, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.0980392, 0.0980392, 0.0980392, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_disabled"]
+content_margin_left = 8.0
+content_margin_top = 5.0
+content_margin_right = 8.0
+content_margin_bottom = 5.0
+bg_color = Color(0.5, 0.5, 0.5, 0.2)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.5, 0.5, 0.5, 0.5)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_btn_focus"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tag_frame"]
+bg_color = Color(0.933333, 0.894118, 0.8, 0.7)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.0980392, 0.0980392, 0.0980392, 1)
 
 [node name="NotebookLayer" type="CanvasLayer" unique_id=563192354]
 process_mode = 3
@@ -36,7 +111,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.23137255, 0.23137255, 0.23137255, 0.94509804)
+color = Color(0.08, 0.08, 0.08, 0.88)
 
 [node name="Notebook" type="TabContainer" parent="." unique_id=1704977329]
 anchors_preset = -1
@@ -45,14 +120,15 @@ anchor_right = 0.85833335
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_selected_color = Color(1, 0.9529412, 0.8627451, 1)
-theme_override_colors/font_hovered_color = Color(1, 1, 1, 1)
-theme_override_colors/font_unselected_color = Color(0.75, 0.71325, 0.645, 1)
+theme_override_colors/font_selected_color = Color(0.0980392, 0.0980392, 0.0980392, 1)
+theme_override_colors/font_hovered_color = Color(1, 0.960784, 0.862745, 1)
+theme_override_colors/font_unselected_color = Color(0.68, 0.65, 0.58, 1)
 theme_override_fonts/font = ExtResource("1_djd1h")
-theme_override_font_sizes/font_size = 32
-theme_override_styles/panel = SubResource("StyleBoxEmpty_djd1h")
-theme_override_styles/tab_unselected = SubResource("StyleBoxFlat_rmmsx")
-theme_override_styles/tab_selected = SubResource("StyleBoxFlat_yqcxt")
+theme_override_font_sizes/font_size = 22
+theme_override_styles/panel = SubResource("StyleBoxEmpty_panel")
+theme_override_styles/tab_unselected = SubResource("StyleBoxFlat_tab_unselected")
+theme_override_styles/tab_hovered = SubResource("StyleBoxFlat_tab_hovered")
+theme_override_styles/tab_selected = SubResource("StyleBoxFlat_tab_selected")
 tab_alignment = 1
 current_tab = 1
 
@@ -63,18 +139,27 @@ texture = ExtResource("3_djd1h")
 expand_mode = 1
 metadata/_tab_index = 0
 
+[node name="EvidenceHeader" type="Label" parent="Notebook/Evidence" unique_id=110022001]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 22.0
+offset_right = 268.0
+offset_bottom = 44.0
+theme_override_colors/font_color = Color(0.38, 0.34, 0.28, 1)
+theme_override_fonts/font = ExtResource("1_djd1h")
+theme_override_font_sizes/font_size = 16
+text = "— CASE EVIDENCE —"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="EvidenceGrid" type="GridContainer" parent="Notebook/Evidence" unique_id=1025719372]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -296.0
-offset_top = 87.0
-offset_right = -87.0
-offset_bottom = 407.0
-grow_horizontal = 2
+layout_mode = 0
+offset_left = 52.0
+offset_top = 52.0
+offset_right = 260.0
+offset_bottom = 364.0
 theme_override_constants/h_separation = 16
-theme_override_constants/v_separation = 16
+theme_override_constants/v_separation = 12
 columns = 2
 
 [node name="EvidenceButton" parent="Notebook/Evidence/EvidenceGrid" unique_id=408976175 instance=ExtResource("4_djd1h")]
@@ -95,54 +180,71 @@ layout_mode = 2
 [node name="EvidenceButton6" parent="Notebook/Evidence/EvidenceGrid" unique_id=1309655863 instance=ExtResource("4_djd1h")]
 layout_mode = 2
 
+[node name="CloseButton" type="Button" parent="Notebook/Evidence" unique_id=110022002]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 432.0
+offset_right = 260.0
+offset_bottom = 466.0
+theme_override_colors/font_color = Color(0.0980392, 0.0980392, 0.0980392, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.960784, 0.862745, 1)
+theme_override_colors/font_hover_color = Color(0.0980392, 0.0980392, 0.0980392, 1)
+theme_override_fonts/font = ExtResource("1_djd1h")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn_normal")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_pressed")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_hover")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_btn_disabled")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_btn_focus")
+text = "[X] ESC TO CLOSE"
+
+[node name="EvidenceDossierHeader" type="Label" parent="Notebook/Evidence" unique_id=110022003]
+layout_mode = 0
+offset_left = 416.0
+offset_top = 22.0
+offset_right = 648.0
+offset_bottom = 44.0
+theme_override_colors/font_color = Color(0.38, 0.34, 0.28, 1)
+theme_override_fonts/font = ExtResource("1_djd1h")
+theme_override_font_sizes/font_size = 16
+text = "— EVIDENCE DETAILS —"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="ItemName" type="Label" parent="Notebook/Evidence" unique_id=495637658]
-custom_minimum_size = Vector2(213, 97)
-custom_maximum_size = Vector2(213, 97)
 layout_mode = 0
-offset_left = 424.0
-offset_top = 31.0
-offset_right = 637.0
-offset_bottom = 128.0
+offset_left = 416.0
+offset_top = 50.0
+offset_right = 648.0
+offset_bottom = 94.0
 theme_override_colors/font_color = Color(0.09803922, 0.09803922, 0.09803922, 1)
-theme_override_colors/font_outline_color = Color(0.09803922, 0.09803922, 0.09803922, 1)
 theme_override_fonts/font = ExtResource("1_djd1h")
-theme_override_font_sizes/font_size = 46
+theme_override_font_sizes/font_size = 24
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="ItemDesc" type="Label" parent="Notebook/Evidence" unique_id=2044071300]
-custom_minimum_size = Vector2(216, 344)
-custom_maximum_size = Vector2(216, 344)
+[node name="ItemDivider" type="ColorRect" parent="Notebook/Evidence" unique_id=110022004]
 layout_mode = 0
-offset_left = 424.0
-offset_top = 127.0
-offset_right = 640.0
-offset_bottom = 471.0
-theme_override_colors/font_color = Color(0.09803922, 0.09803922, 0.09803922, 1)
-theme_override_colors/font_outline_color = Color(0.09803922, 0.09803922, 0.09803922, 1)
-theme_override_fonts/font = ExtResource("1_djd1h")
-theme_override_font_sizes/font_size = 32
-autowrap_mode = 2
+offset_left = 430.0
+offset_top = 98.0
+offset_right = 634.0
+offset_bottom = 100.0
+color = Color(0.2, 0.18, 0.15, 0.6)
 
-[node name="CloseLabel" type="RichTextLabel" parent="Notebook/Evidence" unique_id=393171611]
-custom_minimum_size = Vector2(213, 97)
-custom_maximum_size = Vector2(207.79, 27.785)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.06686047
-anchor_top = 0.9058116
-anchor_right = 0.3688808
-anchor_bottom = 0.961493
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0.09803922, 0.09803922, 0.09803922, 1)
+[node name="ItemDesc" type="RichTextLabel" parent="Notebook/Evidence" unique_id=2044071300]
+layout_mode = 0
+offset_left = 416.0
+offset_top = 108.0
+offset_right = 648.0
+offset_bottom = 466.0
+theme_override_colors/default_color = Color(0.09803922, 0.09803922, 0.09803922, 1)
+theme_override_constants/line_separation = 4
 theme_override_fonts/normal_font = ExtResource("1_djd1h")
+theme_override_font_sizes/normal_font_size = 16
+theme_override_font_sizes/bold_font_size = 16
 bbcode_enabled = true
-text = "[img=20x20]res://Assets/fixed_assets/x_icon.png[/img] ESC to Close"
 autowrap_mode = 2
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="Profiles" type="TextureRect" parent="Notebook" unique_id=1621689732]
 layout_mode = 2
@@ -150,12 +252,25 @@ texture = ExtResource("3_djd1h")
 expand_mode = 1
 metadata/_tab_index = 1
 
+[node name="ProfilesHeader" type="Label" parent="Notebook/Profiles" unique_id=120033001]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 22.0
+offset_right = 268.0
+offset_bottom = 44.0
+theme_override_colors/font_color = Color(0.38, 0.34, 0.28, 1)
+theme_override_fonts/font = ExtResource("1_djd1h")
+theme_override_font_sizes/font_size = 16
+text = "— SUSPECT DOSSIERS —"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="ProfileGrid" type="GridContainer" parent="Notebook/Profiles" unique_id=2054127251]
 layout_mode = 0
-offset_left = 40.0
-offset_top = 71.0
-offset_right = 248.0
-offset_bottom = 279.0
+offset_left = 52.0
+offset_top = 52.0
+offset_right = 260.0
+offset_bottom = 260.0
 theme_override_constants/h_separation = 16
 theme_override_constants/v_separation = 16
 columns = 2
@@ -176,51 +291,77 @@ profile = "Mr. Chili"
 layout_mode = 2
 profile = "Mr. Onion"
 
+[node name="ProfileTagFrame" type="Panel" parent="Notebook/Profiles" unique_id=120033002]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 276.0
+offset_right = 268.0
+offset_bottom = 350.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_tag_frame")
+
 [node name="ProfileName" type="Label" parent="Notebook/Profiles" unique_id=1459765763]
-custom_minimum_size = Vector2(213, 97)
-custom_maximum_size = Vector2(213, 97)
 layout_mode = 0
-offset_left = 56.0
-offset_top = 327.0
-offset_right = 269.0
-offset_bottom = 424.0
+offset_left = 48.0
+offset_top = 278.0
+offset_right = 264.0
+offset_bottom = 348.0
 theme_override_colors/font_color = Color(0.09803922, 0.09803922, 0.09803922, 1)
-theme_override_colors/font_outline_color = Color(0.09803922, 0.09803922, 0.09803922, 1)
+theme_override_constants/line_spacing = 2
 theme_override_fonts/font = ExtResource("1_djd1h")
-theme_override_font_sizes/font_size = 46
+theme_override_font_sizes/font_size = 22
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="ProfileDesc" type="Label" parent="Notebook/Profiles" unique_id=1805654180]
-custom_minimum_size = Vector2(216, 432)
-custom_maximum_size = Vector2(216, 432)
+[node name="CloseButton" type="Button" parent="Notebook/Profiles" unique_id=120033003]
 layout_mode = 0
-offset_left = 424.0
-offset_top = 39.0
-offset_right = 640.0
-offset_bottom = 471.0
-theme_override_colors/font_color = Color(0.09803922, 0.09803922, 0.09803922, 1)
-theme_override_colors/font_outline_color = Color(0.09803922, 0.09803922, 0.09803922, 1)
+offset_left = 52.0
+offset_top = 432.0
+offset_right = 260.0
+offset_bottom = 466.0
+theme_override_colors/font_color = Color(0.0980392, 0.0980392, 0.0980392, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.960784, 0.862745, 1)
+theme_override_colors/font_hover_color = Color(0.0980392, 0.0980392, 0.0980392, 1)
 theme_override_fonts/font = ExtResource("1_djd1h")
-theme_override_font_sizes/font_size = 32
-autowrap_mode = 2
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn_normal")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_pressed")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_hover")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_btn_disabled")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_btn_focus")
+text = "CLICK TO CLOSE"
 
-[node name="CloseLabel" type="RichTextLabel" parent="Notebook/Profiles" unique_id=341639656]
-custom_minimum_size = Vector2(213, 97)
-custom_maximum_size = Vector2(207.79, 27.785)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.06686047
-anchor_top = 0.9058116
-anchor_right = 0.3688808
-anchor_bottom = 0.961493
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0.09803922, 0.09803922, 0.09803922, 1)
+[node name="ProfileDossierHeader" type="Label" parent="Notebook/Profiles" unique_id=120033004]
+layout_mode = 0
+offset_left = 416.0
+offset_top = 22.0
+offset_right = 648.0
+offset_bottom = 44.0
+theme_override_colors/font_color = Color(0.38, 0.34, 0.28, 1)
+theme_override_fonts/font = ExtResource("1_djd1h")
+theme_override_font_sizes/font_size = 16
+text = "— SUSPECT DOSSIER —"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ProfileDivider" type="ColorRect" parent="Notebook/Profiles" unique_id=120033005]
+layout_mode = 0
+offset_left = 430.0
+offset_top = 48.0
+offset_right = 634.0
+offset_bottom = 50.0
+color = Color(0.2, 0.18, 0.15, 0.6)
+
+[node name="ProfileDesc" type="RichTextLabel" parent="Notebook/Profiles" unique_id=1805654180]
+layout_mode = 0
+offset_left = 416.0
+offset_top = 58.0
+offset_right = 648.0
+offset_bottom = 466.0
+theme_override_colors/default_color = Color(0.09803922, 0.09803922, 0.09803922, 1)
+theme_override_constants/line_separation = 4
 theme_override_fonts/normal_font = ExtResource("1_djd1h")
+theme_override_font_sizes/normal_font_size = 16
+theme_override_font_sizes/bold_font_size = 16
 bbcode_enabled = true
-text = "[img=20x20]res://Assets/fixed_assets/x_icon.png[/img] ESC to Close"
 autowrap_mode = 2
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
