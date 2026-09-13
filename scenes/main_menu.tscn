@@ -1,23 +1,11 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://rm0nat038koq"]
 
-[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_menu"]
-[ext_resource type="Texture2D" path="res://Assets/fixed_assets/main_menu_new.png" id="2_bg"]
-[ext_resource type="FontFile" path="res://fonts/Mister Pixel Regular.otf" id="3_font"]
+[ext_resource type="Script" uid="uid://drq5r3bh62vcp" path="res://scripts/main_menu.gd" id="1_menu"]
+[ext_resource type="Texture2D" uid="uid://bxmw40i0g7wlg" path="res://Assets/fixed_assets/main_menu_new.png" id="2_bg"]
+[ext_resource type="FontFile" uid="uid://ps5xn0ajg1ap" path="res://fonts/Mister Pixel Regular.otf" id="3_font"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_play_normal"]
 bg_color = Color(1, 0.952941, 0.862745, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0.0980392, 0.0980392, 0.0980392, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_play_hover"]
-bg_color = Color(1, 1, 1, 1)
 border_width_left = 3
 border_width_top = 3
 border_width_right = 3
@@ -40,9 +28,21 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_play_hover"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.0980392, 0.0980392, 0.0980392, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_focus"]
 
-[node name="MainMenu" type="Control"]
+[node name="MainMenu" type="Control" unique_id=1900581996]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -51,7 +51,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_menu")
 
-[node name="Background" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="." unique_id=1579961774]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -62,7 +62,7 @@ texture = ExtResource("2_bg")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="PlayButton" type="Button" parent="."]
+[node name="PlayButton" type="Button" parent="." unique_id=411277380]
 custom_minimum_size = Vector2(200, 52)
 layout_mode = 1
 anchors_preset = 7
@@ -78,12 +78,12 @@ grow_horizontal = 2
 grow_vertical = 0
 mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(0.0980392, 0.0980392, 0.0980392, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0.2, 0.2, 0.2, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_font")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_play_normal")
-theme_override_styles/hover = SubResource("StyleBoxFlat_play_hover")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_play_pressed")
+theme_override_styles/hover = SubResource("StyleBoxFlat_play_hover")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_focus")
 text = "Play"
