@@ -111,25 +111,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="CloseLabel" type="Label" parent="Notebook/Evidence" unique_id=886046440]
-custom_minimum_size = Vector2(213, 97)
-custom_maximum_size = Vector2(207.79, 27.785)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.06686047
-anchor_top = 0.9058116
-anchor_right = 0.3688808
-anchor_bottom = 0.961493
-theme_override_colors/font_color = Color(0.09803922, 0.09803922, 0.09803922, 1)
-theme_override_colors/font_outline_color = Color(0.09803922, 0.09803922, 0.09803922, 1)
-theme_override_fonts/font = ExtResource("1_djd1h")
-theme_override_font_sizes/font_size = 26
-text = "ESC TO Close"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
-metadata/_edit_use_anchors_ = true
-
 [node name="ItemDesc" type="Label" parent="Notebook/Evidence" unique_id=2044071300]
 custom_minimum_size = Vector2(216, 344)
 custom_maximum_size = Vector2(216, 344)
@@ -143,6 +124,25 @@ theme_override_colors/font_outline_color = Color(0.09803922, 0.09803922, 0.09803
 theme_override_fonts/font = ExtResource("1_djd1h")
 theme_override_font_sizes/font_size = 32
 autowrap_mode = 2
+
+[node name="CloseLabel" type="RichTextLabel" parent="Notebook/Evidence" unique_id=393171611]
+custom_minimum_size = Vector2(213, 97)
+custom_maximum_size = Vector2(207.79, 27.785)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.06686047
+anchor_top = 0.9058116
+anchor_right = 0.3688808
+anchor_bottom = 0.961493
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.09803922, 0.09803922, 0.09803922, 1)
+theme_override_fonts/normal_font = ExtResource("1_djd1h")
+bbcode_enabled = true
+text = "[img=20x20]res://Assets/fixed_assets/x_icon.png[/img] ESC to Close"
+autowrap_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Profiles" type="TextureRect" parent="Notebook" unique_id=1621689732]
 layout_mode = 2
@@ -206,7 +206,7 @@ theme_override_fonts/font = ExtResource("1_djd1h")
 theme_override_font_sizes/font_size = 32
 autowrap_mode = 2
 
-[node name="CloseLabel" type="Label" parent="Notebook/Profiles" unique_id=240576631]
+[node name="CloseLabel" type="RichTextLabel" parent="Notebook/Profiles" unique_id=341639656]
 custom_minimum_size = Vector2(213, 97)
 custom_maximum_size = Vector2(207.79, 27.785)
 layout_mode = 1
@@ -215,12 +215,12 @@ anchor_left = 0.06686047
 anchor_top = 0.9058116
 anchor_right = 0.3688808
 anchor_bottom = 0.961493
-theme_override_colors/font_color = Color(0.09803922, 0.09803922, 0.09803922, 1)
+theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0.09803922, 0.09803922, 0.09803922, 1)
-theme_override_fonts/font = ExtResource("1_djd1h")
-theme_override_font_sizes/font_size = 26
-text = "ESC TO Close"
+theme_override_fonts/normal_font = ExtResource("1_djd1h")
+bbcode_enabled = true
+text = "[img=20x20]res://Assets/fixed_assets/x_icon.png[/img] ESC to Close"
+autowrap_mode = 2
 horizontal_alignment = 1
 vertical_alignment = 1
-autowrap_mode = 2
 metadata/_edit_use_anchors_ = true

@@ -14,7 +14,6 @@ extends Control
 @onready var result_portrait: TextureRect = $ResultPanel/SuspectPortrait
 @onready var result_text: Label = $ResultPanel/ResultText
 @onready var next_step_btn: Button = $ResultPanel/NextStepButton
-@onready var retry_btn: Button = $ResultPanel/RetryButton
 @onready var restart_btn: Button = $ResultPanel/RestartButton
 
 var lemon_ending_steps: Array[Dictionary] = []
@@ -30,7 +29,6 @@ func _ready() -> void:
 	accuse_onion_btn.pressed.connect(_on_accuse_onion)
 	review_notes_btn.pressed.connect(func(): Notebook.toggle())
 	
-	retry_btn.pressed.connect(_on_retry)
 	restart_btn.pressed.connect(_on_restart)
 	next_step_btn.pressed.connect(_on_lemon_next_step)
 
@@ -38,7 +36,6 @@ func _on_accuse_chili() -> void:
 	prompt_panel.hide()
 	result_panel.show()
 	next_step_btn.hide()
-	retry_btn.show()
 	restart_btn.show()
 	
 	result_title.text = "BAD ENDING: THE RED HERRING"
@@ -50,7 +47,6 @@ func _on_accuse_onion() -> void:
 	prompt_panel.hide()
 	result_panel.show()
 	next_step_btn.hide()
-	retry_btn.show()
 	restart_btn.show()
 	
 	result_title.text = "BAD ENDING: THE BROKER ESCAPES"
@@ -61,7 +57,6 @@ func _on_accuse_onion() -> void:
 func _on_accuse_lemon() -> void:
 	prompt_panel.hide()
 	result_panel.show()
-	retry_btn.hide()
 	restart_btn.hide()
 	next_step_btn.show()
 	

@@ -4,7 +4,7 @@ extends Control
 @onready var portrait_rect: TextureRect = $Portrait
 @onready var speaker_label: Label = $TextBox/SpeakerLabel
 @onready var text_label: Label = $TextBox/TextLabel
-@onready var continue_btn: Button = $TextBox/ContinueButton
+@onready var continue_btn: TextureButton = $TextBox/ContinueButton
 @onready var skip_btn: Button = $SkipButton
 @onready var flash_rect: ColorRect = $FlashRect
 
@@ -12,8 +12,8 @@ var intro_steps := [
 	{
 		"bg": "res://Assets/Art asset/haven manor/haven manor.png",
 		"portrait": "",
-		"speaker": "Haven Manor — A Stormy Night",
-		"text": "Tonight marks the 25-year reunion of an exclusive circle of friends.\nLaughter and champagne flowed freely behind the grand gates of Haven Manor..."
+		"speaker": "At Haven Manor",
+		"text": "Celebrating 25 Years of Friendship..."
 	},
 	{
 		"bg": "res://Assets/Art asset/haven manor/haven manor.png",
@@ -40,16 +40,16 @@ var intro_steps := [
 		"text": "A shadowy underworld broker of few words, lurking in the corridors.\nWhat secrets did he intend to settle tonight?"
 	},
 	{
-		"bg": "res://Assets/Art asset/pumpkin_office/pumpkin_office.png",
-		"portrait": "res://Assets/Art asset/Characters/pumpkin_die.png",
+		"bg": "res://Assets/fixed_assets/pumpkin_office new.png",
+		"portrait": "",
 		"speaker": "CRIME SCENE",
 		"text": "*SCREEEAAAAM!* A piercing cry echoes through the mansion halls!\nMr. Pumpkin lies dead upon the study floor, impaled by a garden shovel!"
 	},
 	{
-		"bg": "res://Assets/Art asset/pumpkin_office/pumpkin_office.png",
+		"bg": "res://Assets/fixed_assets/pumpkin_office new.png",
 		"portrait": "res://Assets/Art asset/Characters/detective.png",
 		"speaker": "Inspector Garlic",
-		"text": "A brutal murder amidst a circle of wealthy friends.\nYet... look at the body. Zero signs of struggle. Something doesn't add up.\nI must examine the room and catalog every clue."
+		"text": "I need to examine the crime scene first"
 	}
 ]
 
@@ -79,10 +79,10 @@ func show_step(idx: int) -> void:
 	if idx == 5:
 		trigger_flash()
 	
-	if idx >= intro_steps.size() - 1:
-		continue_btn.text = "Examine Scene ->"
-	else:
-		continue_btn.text = "Next ->"
+	#if idx >= intro_steps.size() - 1:
+		#continue_btn.text = "Examine Scene ->"
+	#else:
+		#continue_btn.text = "Next ->"
 
 func trigger_flash() -> void:
 	flash_rect.color = Color(1, 1, 1, 0.85)

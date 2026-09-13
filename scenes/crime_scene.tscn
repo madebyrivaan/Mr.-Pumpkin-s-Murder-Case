@@ -1,15 +1,8 @@
 [gd_scene format=3 uid="uid://dlgy4lg3jigps"]
 
 [ext_resource type="Script" uid="uid://604rabql2hig" path="res://scripts/crime_scene.gd" id="1_scene"]
-[ext_resource type="Texture2D" uid="uid://bmrgmw8xvguc0" path="res://Assets/Art asset/pumpkin_office/pumpkin_office.png" id="2_bg"]
+[ext_resource type="Texture2D" uid="uid://cqsnlomfasuw0" path="res://Assets/fixed_assets/pumpkin_office new.png" id="2_ry68g"]
 [ext_resource type="FontFile" uid="uid://ps5xn0ajg1ap" path="res://fonts/Mister Pixel Regular.otf" id="3_font"]
-[ext_resource type="Texture2D" uid="uid://b00keytkc68u6" path="res://Assets/Art asset/Characters/pumpkin_die.png" id="4_body"]
-[ext_resource type="Texture2D" uid="uid://bvb01fhpfwqln" path="res://sprites/evidence/Shovel.png" id="5_shovel"]
-[ext_resource type="Texture2D" uid="uid://3d4lmnprhpam" path="res://sprites/evidence/Champagne.png" id="6_bottle"]
-[ext_resource type="Texture2D" uid="uid://d4gpx4cepvscu" path="res://sprites/evidence/Glass.png" id="7_glass"]
-[ext_resource type="Texture2D" uid="uid://be2n3jur7e04k" path="res://sprites/evidence/Cigar ash.png" id="8_ash"]
-[ext_resource type="Texture2D" uid="uid://dgs0o8lrctb5c" path="res://Assets/Art asset/pumpkin_office/ring.png" id="8_ry68g"]
-[ext_resource type="Texture2D" uid="uid://bt0ex2pghy1gv" path="res://sprites/evidence/Document page.png" id="9_doc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_top"]
 bg_color = Color(0.0980392, 0.0980392, 0.0980392, 0.9)
@@ -40,7 +33,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_bg")
+texture = ExtResource("2_ry68g")
 expand_mode = 1
 stretch_mode = 5
 
@@ -55,36 +48,36 @@ grow_vertical = 2
 [node name="pumpkin_body" type="TextureButton" parent="Clues" unique_id=1497808274]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.334375
-anchor_top = 0.5703704
-anchor_right = 0.5875
-anchor_bottom = 1.074074
+anchor_left = 0.38645834
+anchor_top = 0.65925926
+anchor_right = 0.63958335
+anchor_bottom = 0.98333335
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource("4_body")
 ignore_texture_size = true
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
 [node name="shovel" type="TextureButton" parent="Clues" unique_id=1121992423]
 layout_mode = 0
-offset_left = 658.0
-offset_top = 357.0
-offset_right = 722.0
-offset_bottom = 421.0
+offset_left = 415.00003
+offset_top = 323.00003
+offset_right = 519.0
+offset_bottom = 422.00003
+rotation = 0.69484967
+scale = Vector2(1.3789771, 0.46561036)
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource("5_shovel")
 ignore_texture_size = true
 stretch_mode = 5
 
 [node name="champagne_bottle" type="TextureButton" parent="Clues" unique_id=436636826]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.33229166
-anchor_top = 0.39074075
-anchor_right = 0.403125
-anchor_bottom = 0.5148148
+anchor_left = 0.346875
+anchor_top = 0.40925926
+anchor_right = 0.41770834
+anchor_bottom = 0.53333336
+scale = Vector2(0.63999873, 1.48)
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource("6_bottle")
 ignore_texture_size = true
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
@@ -92,17 +85,16 @@ metadata/_edit_use_anchors_ = true
 [node name="champagne_glass" type="TextureButton" parent="Clues" unique_id=1684167970]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.85400003
-anchor_top = 0.36
-anchor_right = 0.97
-anchor_bottom = 0.5198858
-offset_left = 107.160034
-offset_top = -24.399994
-offset_right = 89.79999
-offset_bottom = -1.7383118
-rotation = 1.4045843
+anchor_left = 0.79700005
+anchor_top = 0.5823181
+anchor_right = 0.86839634
+anchor_bottom = 0.61700004
+offset_left = 54.189575
+offset_right = 28.961426
+offset_bottom = 45.287994
+rotation = 1.6001203
+scale = Vector2(0.94552183, 0.8324667)
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource("7_glass")
 ignore_texture_size = true
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
@@ -110,15 +102,14 @@ metadata/_edit_use_anchors_ = true
 [node name="cigar_ash" type="TextureButton" parent="Clues" unique_id=925291186]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.625
-anchor_top = 0.28703704
-anchor_right = 0.73537403
-anchor_bottom = 0.44674104
-offset_right = -43.959045
-offset_bottom = -42.240158
+anchor_left = 0.6479167
+anchor_top = 0.40555552
+anchor_right = 0.684375
+anchor_bottom = 0.44674107
+offset_right = -14.520386
+offset_bottom = -10.893173
 scale = Vector2(1.7090166, 1.9600034)
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource("8_ash")
 ignore_texture_size = true
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
@@ -126,12 +117,11 @@ metadata/_edit_use_anchors_ = true
 [node name="diamond_ring" type="TextureButton" parent="Clues" unique_id=2125195436]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.64270836
-anchor_top = 0.2
-anchor_right = 0.70416665
-anchor_bottom = 0.3
+anchor_left = 0.646875
+anchor_top = 0.2574074
+anchor_right = 0.7083333
+anchor_bottom = 0.32592592
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource("8_ry68g")
 ignore_texture_size = true
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
@@ -139,12 +129,11 @@ metadata/_edit_use_anchors_ = true
 [node name="document_page" type="TextureButton" parent="Clues" unique_id=1252575388]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.21354167
-anchor_top = 0.7537037
-anchor_right = 0.28020832
-anchor_bottom = 0.87222224
+anchor_left = 0.21666667
+anchor_top = 0.7592593
+anchor_right = 0.28333333
+anchor_bottom = 0.8777777
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource("9_doc")
 ignore_texture_size = true
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
@@ -219,17 +208,16 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ObservationPopup" type="Panel" parent="." unique_id=1536511765]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -320.0
+offset_left = -271.0
 offset_top = -140.0
-offset_right = 320.0
-offset_bottom = 140.0
+offset_right = 271.0
+offset_bottom = 85.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_popup")
@@ -259,6 +247,7 @@ theme_override_font_sizes/font_size = 28
 text = "Evidence Title"
 
 [node name="Desc" type="Label" parent="ObservationPopup/VBox" unique_id=1994899438]
+custom_maximum_size = Vector2(400, 100)
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.9, 0.88, 0.85, 1)

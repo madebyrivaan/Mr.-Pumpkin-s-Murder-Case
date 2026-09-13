@@ -1,18 +1,48 @@
-[gd_scene format=3 uid="uid://rm0nat038koq"]
+[gd_scene format=3]
 
-[ext_resource type="Script" uid="uid://drq5r3bh62vcp" path="res://scripts/main_menu.gd" id="1_menu"]
-[ext_resource type="Texture2D" uid="uid://p54vvcrpt7ku" path="res://Assets/Art asset/haven manor/haven manor.png" id="2_bg"]
-[ext_resource type="FontFile" uid="uid://ps5xn0ajg1ap" path="res://fonts/Mister Pixel Regular.otf" id="3_font"]
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_menu"]
+[ext_resource type="Texture2D" path="res://Assets/fixed_assets/main_menu_new.png" id="2_bg"]
+[ext_resource type="FontFile" path="res://fonts/Mister Pixel Regular.otf" id="3_font"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
-bg_color = Color(0.0980392, 0.0980392, 0.0980392, 0.941176)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(1, 0.952941, 0.862745, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_play_normal"]
+bg_color = Color(1, 0.952941, 0.862745, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.0980392, 0.0980392, 0.0980392, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
-[node name="MainMenu" type="Control" unique_id=2088885095]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_play_hover"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.0980392, 0.0980392, 0.0980392, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_play_pressed"]
+bg_color = Color(0.88, 0.83, 0.75, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.0980392, 0.0980392, 0.0980392, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_focus"]
+
+[node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -21,7 +51,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_menu")
 
-[node name="Background" type="TextureRect" parent="." unique_id=713108998]
+[node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -32,138 +62,28 @@ texture = ExtResource("2_bg")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Dimmer" type="ColorRect" parent="." unique_id=259463696]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 0.45)
-
-[node name="TitleBox" type="VBoxContainer" parent="." unique_id=293892248]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -350.0
-offset_top = 50.0
-offset_right = 350.0
-offset_bottom = 170.0
-grow_horizontal = 2
-theme_override_constants/separation = 4
-
-[node name="Title" type="Label" parent="TitleBox" unique_id=61631198]
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 0.952941, 0.862745, 1)
-theme_override_fonts/font = ExtResource("3_font")
-theme_override_font_sizes/font_size = 56
-text = "HAVEN MANOR"
-horizontal_alignment = 1
-
-[node name="Subtitle" type="Label" parent="TitleBox" unique_id=1196431306]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.85, 0.8, 0.7, 1)
-theme_override_fonts/font = ExtResource("3_font")
-theme_override_font_sizes/font_size = 28
-text = "A Deadly 25th Reunion"
-horizontal_alignment = 1
-
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=347095513]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -160.0
-offset_top = 20.0
-offset_right = 160.0
-offset_bottom = 190.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 14
-
-[node name="PlayButton" type="Button" parent="VBoxContainer" unique_id=1749907296]
-custom_minimum_size = Vector2(0, 44)
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 0.952941, 0.862745, 1)
-theme_override_fonts/font = ExtResource("3_font")
-theme_override_font_sizes/font_size = 28
-text = "Start Investigation"
-
-[node name="CreditsButton" type="Button" parent="VBoxContainer" unique_id=379298192]
-custom_minimum_size = Vector2(0, 44)
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 0.952941, 0.862745, 1)
-theme_override_fonts/font = ExtResource("3_font")
-theme_override_font_sizes/font_size = 28
-text = "Case Briefing & Credits"
-
-[node name="QuitButton" type="Button" parent="VBoxContainer" unique_id=2099151489]
-custom_minimum_size = Vector2(0, 44)
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 0.952941, 0.862745, 1)
-theme_override_fonts/font = ExtResource("3_font")
-theme_override_font_sizes/font_size = 28
-text = "Exit"
-
-[node name="CreditsPanel" type="Panel" parent="." unique_id=630605277]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -300.0
-offset_top = -180.0
-offset_right = 300.0
-offset_bottom = 180.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
-
-[node name="CreditsLabel" type="Label" parent="CreditsPanel" unique_id=1015967770]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 24.0
-offset_top = 24.0
-offset_right = -24.0
-offset_bottom = -70.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(1, 0.952941, 0.862745, 1)
-theme_override_fonts/font = ExtResource("3_font")
-theme_override_font_sizes/font_size = 24
-text = "JAME GAM #61 SUBMISSION
-
-Theme: Botany | Paradox | Gravity
-A story-driven point-and-click murder mystery.
-
-Detective: Inspector Garlic
-Victim: Mr. Pumpkin
-Suspects: Lady Lemon, Mr. Chili, Mr. Onion
-
-Investigate the crime scene, uncover clues,
-interrogate the suspects, and name the killer!"
-autowrap_mode = 2
-
-[node name="CloseButton" type="Button" parent="CreditsPanel" unique_id=2037942129]
+[node name="PlayButton" type="Button" parent="."]
+custom_minimum_size = Vector2(200, 52)
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -60.0
-offset_top = -54.0
-offset_right = 60.0
-offset_bottom = -16.0
+offset_left = -100.0
+offset_top = -120.0
+offset_right = 100.0
+offset_bottom = -68.0
 grow_horizontal = 2
 grow_vertical = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.0980392, 0.0980392, 0.0980392, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.2, 0.2, 0.2, 1)
 theme_override_fonts/font = ExtResource("3_font")
-theme_override_font_sizes/font_size = 24
-text = "Back"
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_play_normal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_play_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_play_pressed")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_focus")
+text = "Play"

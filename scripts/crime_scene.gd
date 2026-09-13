@@ -15,37 +15,37 @@ var clues_data := {
 	"pumpkin_body": {
 		"title": "Mr. Pumpkin's Body",
 		"icon": "res://Assets/Art asset/Characters/pumpkin_die.png",
-		"text": "Inspector Garlic: 'Mr. Pumpkin lies dead on the carpet. Stricken down, yet... there are zero signs of a physical struggle. How could an attacker overpower him so cleanly without a fight?'"
+		"text": "Victim... zero signs of a struggle?"
 	},
 	"shovel": {
 		"title": "Garden Shovel (Murder Weapon)",
 		"icon": "res://sprites/evidence/Shovel.png",
-		"text": "Inspector Garlic: 'A heavy iron garden shovel. The handle has fingerprints... but why was it driven straight down without any resistance? A frail suspect could never swing this, but someone strong could.'"
+		"text": "The murder weapon has fingerprints belonging to...?"
 	},
 	"champagne_bottle": {
 		"title": "Champagne Bottle",
 		"icon": "res://sprites/evidence/Champagne.png",
-		"text": "Inspector Garlic: 'A vintage bottle of estate champagne... half empty. Standard alcohol content, completely untampered.'"
+		"text": "A vintage bottle... half empty."
 	},
 	"champagne_glass": {
 		"title": "Champagne Glass",
 		"icon": "res://sprites/evidence/Glass.png",
-		"text": "Inspector Garlic: 'Wait! The lingering aroma in this glass differs distinctly from the bottle! A sharp, suffocating acidity... concentrated lemon juice! A lethal shock to a pumpkin's hollow core!'"
+		"text": "Why does the smell of this glass differ from the bottle?"
 	},
 	"cigar_ash": {
 		"title": "Scorched Cigar Ash",
 		"icon": "res://sprites/evidence/Cigar ash.png",
-		"text": "Inspector Garlic: 'A scorched burn mark on the antique desk left by fresh cigar ash. Mr. Pumpkin hated smoking. Someone sat here puffing angrily during a confrontation.'"
+		"text": "A scorched mark left by cigar ash... Someone was smoking here, and it wasn't Mr. Pumpkin."
 	},
 	"diamond_ring": {
 		"title": "Dropped Diamond Ring",
-		"icon": "res://sprites/evidence/Glass.png",
-		"text": "Inspector Garlic: 'An exquisite diamond ring dropped beside the chair. Flawless cut... clearly belonging to a high-society lady who lost her composure.'"
+		"icon": "res://Assets/fixed_assets/ring_new.png",
+		"text": "This clearly belongs to a high - society lady."
 	},
 	"document_page": {
 		"title": "Torn Document Page",
 		"icon": "res://sprites/evidence/Document page.png",
-		"text": "Inspector Garlic: 'A torn page from an extortion contract. The edges smell of machine oil and sap from Pumpkin's desk drawer. Someone rifled through here in a hurry.'"
+		"text": "An important page left on the floor....."
 	}
 }
 

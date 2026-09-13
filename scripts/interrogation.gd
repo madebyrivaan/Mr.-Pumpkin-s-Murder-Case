@@ -59,7 +59,7 @@ func _update_hub() -> void:
 	if GameManager.all_suspects_interrogated():
 		accuse_btn.disabled = false
 		accuse_btn.text = "Make Final Accusation ->"
-		garlic_summary_lbl.text = "Deduction Ready:\n• Pumpkin had zero struggle wounds.\n• Chili threw the shovel down unswung.\n• Onion found Pumpkin already dying of poison before any shovel strike!\n• The champagne glass had concentrated lemon acidity!\nReady to name the murderer!"
+		garlic_summary_lbl.text = "Deduction Ready:\n• Pumpkin had zero struggle wounds.\n• Chili threw the shovel down unswung.\n• Onion found Pumpkin already dying before any shovel strike!\n• Champagne glass bore a unique aroma missing from the bottle."
 		suspects_grid.hide()
 		garlic_summary_lbl.position.y = 201.0;
 		garlic_summary_lbl.show()

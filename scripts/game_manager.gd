@@ -9,37 +9,37 @@ var evidence_db: Dictionary = {
 	"champagne_bottle": {
 		"name": "Champagne Bottle",
 		"icon": "res://sprites/evidence/Champagne.png",
-		"desc": "A vintage champagne bottle... half empty. Mr. Pumpkin was drinking alone before the guests entered."
+		"desc": "A vintage bottle... half empty."
 	},
 	"champagne_glass": {
 		"name": "Champagne Glass",
 		"icon": "res://sprites/evidence/Glass.png",
-		"desc": "Mr. Pumpkin's glass. The faint lingering scent differs distinctly from the bottle—a sharp, concentrated citrus aroma!"
+		"desc": "Why does the smell of this glass differ from the bottle?"
 	},
 	"shovel": {
 		"name": "Garden Shovel",
 		"icon": "res://sprites/evidence/Shovel.png",
-		"desc": "The murder weapon pinned into the victim. Smeared with fingerprints... yet left standing upright."
+		"desc": "The murder weapon has fingerprints belonging to...?"
 	},
 	"cigar_ash": {
 		"name": "Cigar Ash",
 		"icon": "res://sprites/evidence/Cigar ash.png",
-		"desc": "A scorched burn mark on the wooden desk left by fresh cigar ash. Mr. Pumpkin never smoked."
+		"desc": "A scorched mark left by cigar ash... Someone was smoking here, and it wasn't Mr. Pumpkin."
 	},
 	"diamond_ring": {
 		"name": "Diamond Ring",
 		"icon": "res://sprites/evidence/Glass.png",
-		"desc": "An expensive diamond ring found dropped near the desk. Clearly belongs to high society."
+		"desc": "This clearly belongs to a high - society lady."
 	},
 	"document_page": {
 		"name": "Document Page",
 		"icon": "res://sprites/evidence/Document page.png",
-		"desc": "A torn page from an extortion and smuggling contract. Scented with machine oil and desk sap."
+		"desc": "An important page left on the floor....."
 	},
 	"pumpkin_body": {
 		"name": "Mr. Pumpkin's Body",
 		"icon": "res://Assets/Art asset/Characters/pumpkin_die.png",
-		"desc": "The tyrannical victim. Oddly, there are zero signs of physical struggle on the body."
+		"desc": "Victim... zero signs of a struggle?"
 	}
 }
 

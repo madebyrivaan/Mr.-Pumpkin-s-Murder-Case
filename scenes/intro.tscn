@@ -1,8 +1,10 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://oiflp3gs3e63"]
 
-[ext_resource type="Script" path="res://scripts/intro.gd" id="1_intro"]
-[ext_resource type="Texture2D" path="res://Assets/Art asset/haven manor/haven manor.png" id="2_bg"]
-[ext_resource type="FontFile" path="res://fonts/Mister Pixel Regular.otf" id="3_font"]
+[ext_resource type="Script" uid="uid://bacpdvtw8cban" path="res://scripts/intro.gd" id="1_intro"]
+[ext_resource type="Texture2D" uid="uid://p54vvcrpt7ku" path="res://Assets/Art asset/haven manor/haven manor.png" id="2_bg"]
+[ext_resource type="FontFile" uid="uid://ps5xn0ajg1ap" path="res://fonts/Mister Pixel Regular.otf" id="3_font"]
+[ext_resource type="Texture2D" uid="uid://d2uavjsl64hqx" path="res://Assets/Art asset/UI/-_.png" id="4_i2l1n"]
+[ext_resource type="Texture2D" uid="uid://dgqtk2hpr6vpg" path="res://Assets/Art asset/UI/selected_-_.png" id="5_wfs7u"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_box"]
 bg_color = Color(0.0980392, 0.0980392, 0.0980392, 0.95)
@@ -12,7 +14,7 @@ border_width_right = 2
 border_width_bottom = 2
 border_color = Color(1, 0.952941, 0.862745, 1)
 
-[node name="Intro" type="Control"]
+[node name="Intro" type="Control" unique_id=19899870]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -21,7 +23,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_intro")
 
-[node name="Background" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="." unique_id=1779706439]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -32,7 +34,7 @@ texture = ExtResource("2_bg")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Portrait" type="TextureRect" parent="."]
+[node name="Portrait" type="TextureRect" parent="." unique_id=1794523023]
 layout_mode = 0
 offset_left = 60.0
 offset_top = 200.0
@@ -41,7 +43,7 @@ offset_bottom = 328.0
 expand_mode = 1
 stretch_mode = 5
 
-[node name="TextBox" type="Panel" parent="."]
+[node name="TextBox" type="Panel" parent="." unique_id=214707208]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -55,7 +57,7 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_box")
 
-[node name="SpeakerLabel" type="Label" parent="TextBox"]
+[node name="SpeakerLabel" type="Label" parent="TextBox" unique_id=880542912]
 layout_mode = 0
 offset_left = 20.0
 offset_top = 12.0
@@ -66,7 +68,7 @@ theme_override_fonts/font = ExtResource("3_font")
 theme_override_font_sizes/font_size = 28
 text = "Haven Manor"
 
-[node name="TextLabel" type="Label" parent="TextBox"]
+[node name="TextLabel" type="Label" parent="TextBox" unique_id=412442405]
 layout_mode = 0
 offset_left = 20.0
 offset_top = 50.0
@@ -78,25 +80,17 @@ theme_override_font_sizes/font_size = 24
 text = "Story text goes here..."
 autowrap_mode = 2
 
-[node name="ContinueButton" type="Button" parent="TextBox"]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -170.0
-offset_top = -55.0
-offset_right = -20.0
-offset_bottom = -15.0
-grow_horizontal = 0
-grow_vertical = 0
-theme_override_colors/font_color = Color(1, 0.952941, 0.862745, 1)
-theme_override_fonts/font = ExtResource("3_font")
-theme_override_font_sizes/font_size = 24
-text = "Next ->"
+[node name="ContinueButton" type="TextureButton" parent="TextBox" unique_id=243388812]
+layout_mode = 0
+offset_left = 807.0
+offset_top = 105.0
+offset_right = 847.0
+offset_bottom = 145.0
+texture_normal = ExtResource("4_i2l1n")
+texture_pressed = ExtResource("5_wfs7u")
+stretch_mode = 0
 
-[node name="SkipButton" type="Button" parent="."]
+[node name="SkipButton" type="Button" parent="." unique_id=648253151]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -110,7 +104,7 @@ theme_override_fonts/font = ExtResource("3_font")
 theme_override_font_sizes/font_size = 20
 text = "Skip Intro >>"
 
-[node name="FlashRect" type="ColorRect" parent="."]
+[node name="FlashRect" type="ColorRect" parent="." unique_id=2085567459]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
