@@ -6,7 +6,6 @@ extends Control
 @onready var speaker_label: Label = $TextBox/SpeakerLabel
 @onready var text_label: Label = $TextBox/TextLabel
 @onready var continue_btn: TextureButton = $ContinueButton
-@onready var skip_btn: Button = $SkipButton
 @onready var flash_rect: ColorRect = $FlashRect
 @onready var card_container: Control = $CardContainer
 
@@ -70,7 +69,6 @@ func _ready() -> void:
 	GameManager.play_bgm("investigation")
 	flash_rect.color = Color(1, 1, 1, 0)
 	continue_btn.pressed.connect(_on_continue_pressed)
-	skip_btn.pressed.connect(_go_to_crime_scene)
 	
 	_setup_character_cards()
 	show_step(0)

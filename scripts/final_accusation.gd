@@ -100,7 +100,7 @@ func _show_lemon_step(idx: int) -> void:
 	
 	if idx >= lemon_ending_steps.size() - 1:
 		next_step_btn.hide()
-		restart_btn.text = "Play Again"
+		restart_btn.text = "Continue ->"
 		restart_btn.show()
 	else:
 		next_step_btn.text = "Continue ->"
@@ -116,4 +116,4 @@ func _on_retry() -> void:
 
 func _on_restart() -> void:
 	GameManager.reset_game()
-	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+	get_tree().change_scene_to_file("res://scenes/end_screen.tscn")
