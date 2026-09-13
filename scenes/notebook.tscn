@@ -130,10 +130,9 @@ theme_override_styles/tab_unselected = SubResource("StyleBoxFlat_tab_unselected"
 theme_override_styles/tab_hovered = SubResource("StyleBoxFlat_tab_hovered")
 theme_override_styles/tab_selected = SubResource("StyleBoxFlat_tab_selected")
 tab_alignment = 1
-current_tab = 1
+current_tab = 0
 
 [node name="Evidence" type="TextureRect" parent="Notebook" unique_id=368804411]
-visible = false
 layout_mode = 2
 texture = ExtResource("3_djd1h")
 expand_mode = 1
@@ -196,7 +195,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_pressed")
 theme_override_styles/hover = SubResource("StyleBoxFlat_btn_hover")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_btn_disabled")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_btn_focus")
-text = "[X] ESC TO CLOSE"
+text = "CLICK TO CLOSE"
 
 [node name="EvidenceDossierHeader" type="Label" parent="Notebook/Evidence" unique_id=110022003]
 layout_mode = 0
@@ -247,6 +246,7 @@ bbcode_enabled = true
 autowrap_mode = 2
 
 [node name="Profiles" type="TextureRect" parent="Notebook" unique_id=1621689732]
+visible = false
 layout_mode = 2
 texture = ExtResource("3_djd1h")
 expand_mode = 1

@@ -79,12 +79,32 @@ var interrogated_suspects: Dictionary = {
 }
 
 var bgm_player: AudioStreamPlayer
+var ambience_player: AudioStreamPlayer
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	bgm_player = AudioStreamPlayer.new()
 	bgm_player.bus = "Master"
+	bgm_player.volume_db = -6.0
 	add_child(bgm_player)
+	
+	ambience_player = AudioStreamPlayer.new()
+	ambience_player.bus = "Master"
+	ambience_player.volume_db = -16.0
+	add_child(ambience_player)
+	
+	_start_ambience()
+
+func _start_ambience() -> void:
+	var path := "res://Assets/Music + SFX/ambience_sound.ogg"
+	var stream = load(path)
+	if stream is AudioStreamOggVorbis:
+		stream.loop = true
+	ambience_player.stream = stream
+	if not ambience_player.playing:
+		ambience_player.play()
+	if not ambience_player.finished.is_connected(ambience_player.play):
+		ambience_player.finished.connect(ambience_player.play)
 
 func reset_game() -> void:
 	collected_evidence.clear()
@@ -134,13 +154,17 @@ func all_suspects_interrogated() -> bool:
 
 func play_bgm(track_type: String) -> void:
 	var path := ""
-	if track_type == "menu" or track_type == "investigation":
+	if track_type == "menu" or track_type == "investigation" or track_type == "interrogation":
 		path = "res://Assets/Music + SFX/mainmenu_song.ogg"
-	elif track_type == "climax" or track_type == "interrogation" or track_type == "accusation":
+	elif track_type == "accusation" or track_type == "final_interrogation":
+		path = "res://Assets/Music + SFX/interrogationfull_song.ogg"
+	elif track_type == "climax":
 		path = "res://Assets/Music + SFX/gameclimax_song.ogg"
 	
 	if path != "":
 		var stream = load(path)
+		if stream is AudioStreamOggVorbis:
+			stream.loop = true
 		if bgm_player.stream != stream or not bgm_player.playing:
 			bgm_player.stream = stream
 			bgm_player.play()

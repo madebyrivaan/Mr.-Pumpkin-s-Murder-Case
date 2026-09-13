@@ -22,8 +22,18 @@ var _selected_evidence_id: String = ""
 var _profile_cards: Dictionary = {}
 var _evidence_cards: Dictionary = {}
 
+var sfx_player: AudioStreamPlayer
+var flip_sfx: AudioStream
+
 func _ready() -> void:
 	hide()
+	sfx_player = AudioStreamPlayer.new()
+	sfx_player.bus = "Master"
+	sfx_player.volume_db = -2.0
+	add_child(sfx_player)
+	flip_sfx = load("res://Assets/Music + SFX/bookflip3_sound.ogg")
+	
+	notebook_tabs.tab_changed.connect(_on_tab_changed)
 	GameManager.evidence_collected.connect(_on_evidence_collected)
 	GameManager.suspect_updated.connect(_on_suspect_updated)
 	
@@ -239,8 +249,18 @@ func _unhandled_input(event: InputEvent) -> void:
 		if visible:
 			close()
 
+func _play_flip_sound() -> void:
+	if sfx_player and flip_sfx:
+		sfx_player.stream = flip_sfx
+		sfx_player.play()
+
+func _on_tab_changed(_tab: int) -> void:
+	if visible:
+		_play_flip_sound()
+
 func open() -> void:
 	show()
+	_play_flip_sound()
 	refresh_evidence()
 	refresh_profiles()
 	if GameManager.collected_evidence.size() > 0:
@@ -251,6 +271,8 @@ func open() -> void:
 	_select_suspect("Mr. Pumpkin")
 
 func close() -> void:
+	if visible:
+		_play_flip_sound()
 	visible = false
 
 func toggle() -> void:

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cu3dc52rqbuks"
+path="res://.godot/imported/interrogationfull_song.ogg-d9536d0b76e066a8977e8a7569e2dafa.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Music + SFX/interrogationfull_song.ogg"
+dest_files=["res://.godot/imported/interrogationfull_song.ogg-d9536d0b76e066a8977e8a7569e2dafa.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

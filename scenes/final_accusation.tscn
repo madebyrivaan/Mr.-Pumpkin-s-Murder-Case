@@ -5,7 +5,7 @@
 [ext_resource type="FontFile" uid="uid://ps5xn0ajg1ap" path="res://fonts/Mister Pixel Regular.otf" id="3_font"]
 [ext_resource type="Texture2D" uid="uid://d2dgbbvjkh5n0" path="res://Assets/Art asset/Characters/lemon_dialog.png" id="4_lemon"]
 [ext_resource type="Texture2D" uid="uid://bvewnyga3pmxl" path="res://Assets/Art asset/Characters/chili.png" id="5_chili"]
-[ext_resource type="Texture2D" uid="uid://byt12p2ksugdq" path="res://Assets/Art asset/Characters/detective.png" id="6_onion"]
+[ext_resource type="Texture2D" uid="uid://c64kxbglip5uv" path="res://Assets/Art asset/Characters/onion.png" id="6_pp1k3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
 bg_color = Color(0.08, 0.08, 0.08, 0.94)
@@ -229,7 +229,7 @@ alignment = 1
 [node name="Portrait" type="TextureRect" parent="PromptPanel/SuspectsGrid/OnionCard/VBox" unique_id=1809946437]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
-texture = ExtResource("6_onion")
+texture = ExtResource("6_pp1k3")
 expand_mode = 1
 stretch_mode = 5
 

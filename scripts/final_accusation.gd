@@ -20,7 +20,7 @@ var lemon_ending_steps: Array[Dictionary] = []
 var lemon_step_idx := 0
 
 func _ready() -> void:
-	GameManager.play_bgm("climax")
+	GameManager.play_bgm("accusation")
 	result_panel.hide()
 	prompt_panel.show()
 	
@@ -55,6 +55,7 @@ func _on_accuse_onion() -> void:
 	result_text.text = "Mr. Onion smirks coldly:\n'Arresting me for murder based on a stolen paper? My attorneys will shred your badge by morning, Detective.'\n\nAutopsy toxicology reports soon prove Mr. Pumpkin died of severe internal chemical poisoning prior to any shovel strike. By dawn, Lady Lemon has fled across the border with the estate shares.\n\nJustice was cheated.\n\nCASE UNSOLVED."
 
 func _on_accuse_lemon() -> void:
+	GameManager.play_bgm("climax")
 	prompt_panel.hide()
 	result_panel.show()
 	restart_btn.hide()

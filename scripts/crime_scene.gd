@@ -49,10 +49,19 @@ var clues_data := {
 	}
 }
 
+var clue_sfx_player: AudioStreamPlayer
+var clue_sound: AudioStream
+
 func _ready() -> void:
 	GameManager.play_bgm("investigation")
 	popup_panel.hide()
 	status_lbl.hide()
+	
+	clue_sfx_player = AudioStreamPlayer.new()
+	clue_sfx_player.bus = "Master"
+	clue_sfx_player.volume_db = 0.0
+	add_child(clue_sfx_player)
+	clue_sound = load("res://Assets/Music + SFX/clue_sound.ogg")
 	
 	notebook_btn.pressed.connect(_on_notebook_pressed)
 	interrogate_btn.pressed.connect(_on_interrogate_pressed)
@@ -88,6 +97,9 @@ func _on_clue_clicked(clue_id: String) -> void:
 	popup_panel.show()
 	
 	if is_new:
+		if clue_sfx_player and clue_sound:
+			clue_sfx_player.stream = clue_sound
+			clue_sfx_player.play()
 		_show_banner("Clue recorded in Detective Notebook!")
 	
 	_update_ui()
